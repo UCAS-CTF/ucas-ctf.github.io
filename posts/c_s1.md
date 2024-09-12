@@ -1,4 +1,199 @@
 # C 语言基础
+
+## 基础变量类型
+
+### 整型
+
+```c
+int a = 10;
+```
+
+### 浮点型
+
+```c
+float b = 3.14;
+```
+
+### 字符型
+
+```c
+char c = 'A';
+```
+
+## 语句
+
+### 表达式语句
+
+```c
+a = b + c;
+```
+
+### 复合语句
+
+```c
+{
+    // code
+}
+```
+
+## 基础库函数
+
+### printf()
+
+```c
+printf("Hello, World!\n");
+
+int a = 10;
+printf("a = %d\n", a);
+
+float b = 3.14;
+
+printf("b = %f\n", b);
+
+char c = 'A';
+
+printf("c = %c\n", c);
+```
+
+### scanf()
+
+```c
+int a;
+scanf("%d", &a);
+
+float b;
+scanf("%f", &b);
+
+char c;
+scanf("%c", &c);
+```
+
+### getchar()
+
+```c
+char c = getchar();
+```
+
+### putchar()
+
+```c
+putchar('A');
+```
+
+### gets()
+
+```c
+char str[100];
+gets(str);
+```
+
+### puts()
+
+```c
+char str[100] = "Hello, World!";
+puts(str);
+```
+
+
+## 条件与循环
+
+### 条件语句
+
+#### if 语句
+
+```c
+if (condition) {
+    // code
+}
+```
+
+#### if-else 语句
+
+```c
+if (condition) {
+    // code
+} else {
+    // code
+}
+```
+
+#### if-else if-else 语句
+
+```c
+if (condition1) {
+    // code
+} else if (condition2) {
+    // code
+} else {
+    // code
+}
+```
+
+### 循环语句
+
+#### while 循环
+
+```c
+while (condition) {
+    // code
+}
+```
+
+#### do-while 循环
+
+```c
+do {
+    // code
+} while (condition);
+```
+
+#### for 循环
+
+```c
+for (init; condition; increment) {
+    // code
+}
+```
+
+### 跳转语句
+
+#### break 语句
+
+```c
+
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    printf("%d\n", i);
+}
+```
+
+#### continue 语句
+
+```c
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue;
+    }
+    printf("%d\n", i);
+}
+```
+
+#### goto 语句
+
+```c
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        goto end;
+    }
+    printf("%d\n", i);
+}
+end:
+```
+
+
+
 ## 变量类型
 ### 整型（Integer Types）
 包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。
