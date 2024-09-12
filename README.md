@@ -4,6 +4,8 @@
 
 [环境搭建](https://ucas-ctf.github.io/posts/env)
 
+[环境搭建——Mac](https://ucas-ctf.github.io/posts/setup-env-on-macOS)
+
 [C基础——编写、编译](https://ucas-ctf.github.io/posts/c_s0)
 
 [C基础——数据类型](https://ucas-ctf.github.io/posts/c_s1)
