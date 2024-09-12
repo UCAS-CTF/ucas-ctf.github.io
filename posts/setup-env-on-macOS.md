@@ -17,18 +17,18 @@ xcode-select --install
 + 你 **有** 稳定快速的 Github 连接 ([官网](https://brew.sh))
 
   ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   ```
 + 你 **没有** 稳定快速的 Github 连接 ([清华源](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/))
 
   在运行官网脚本之前请设置对应的环境变量 [^2] ([PATH (Wikipedia)](https://en.wikipedia.org/wiki/PATH_(variable)))
 
   ```shell
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_INSTALL_FROM_API=1
+  export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+  export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+  export HOMEBREW_INSTALL_FROM_API=1
 
-/bin/bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)"
   ```
 
   [^2] 所谓的环境变量, 可以理解为在 Shell 这个交互式程序 (REPL) 执行过程中的变量. 其中 `export` 的关键词用于将该变量名字在该 Shell 进程中设为 "全局" 的变量. 你可以通过 `$HOMEBREW_BREW_GIT_REMOTE` 的方式 (前缀 `$`) 来引用变量的值.
@@ -37,17 +37,17 @@ export HOMEBREW_INSTALL_FROM_API=1
 + 下载包
 
   ```shell
-brew install <包的名称>
+  brew install <包的名称>
   ```
 + 更新包
 
   ```shell
-brew upgrade <包的名称>
+  brew upgrade <包的名称>
   ```
 + 移除包
 
   ```shell
-brew uninstall <包的名称>
+  brew uninstall <包的名称>
   ```
 + 更多请自行阅读 `man brew` 或者 `brew help`.
 
@@ -75,29 +75,29 @@ brew uninstall <包的名称>
 1. 安装 QEMU:
 
    ```shell
-brew install qemu
+   brew install qemu
    ```
 2. 选择一个文件夹或者你想要存放文件的路径:
 
    ```shell
-# 设置全局环境变量
-export LINUX_VM="~/ctf/linux-vm/"
+   # 设置全局环境变量
+   export LINUX_VM="~/ctf/linux-vm/"
 
-# 创建对应的文件夹
-mkdir -pv $LINUX_VM
+   # 创建对应的文件夹
+   mkdir -pv $LINUX_VM
 
-# 切换到对应的文件夹
-cd $LINUX_VM
+   # 切换到对应的文件夹
+   cd $LINUX_VM
    ```
 3. 创建一个虚拟磁盘, 大小 (`LINUX_VM_SIZE`) 随便分配
 
    ```shell
-# 虚拟磁盘名称
-export LINUX_VM_DISK=$LINUX_VM/linux.qcow2
-export LINUX_VM_SIZE=8G
+   # 虚拟磁盘名称
+   export LINUX_VM_DISK=$LINUX_VM/linux.qcow2
+   export LINUX_VM_SIZE=8G
 
-# 创建镜像
-qemu-img create -f qcow2 $LINUX_VM_DISK $LINUX_VM_SIZE
+   # 创建镜像
+   qemu-img create -f qcow2 $LINUX_VM_DISK $LINUX_VM_SIZE
    ```
 4. 挂载安装镜像 `.iso` 并运行虚拟机:
 
