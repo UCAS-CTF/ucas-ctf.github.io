@@ -39,7 +39,7 @@ Windows与Linux建立共享文件夹的方法之一：Samba
 
 gcc 编译器，gdb 调试器的安装
 ```bash
-sudo apt install gcc gdb
+sudo apt install build-essential gdb
 ```
 [VScode 远程SSH链接并配置C/C++](https://blog.csdn.net/QCZL_CC/article/details/141785594)
 
