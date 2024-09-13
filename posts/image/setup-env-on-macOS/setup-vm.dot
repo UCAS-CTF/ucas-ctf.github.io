@@ -1,0 +1,47 @@
+digraph {
+  node [shape=diamond,
+	fontname="Arial"];
+  edge [fontname="Arial"];
+
+  select        [label   = "以下三种虚拟机方案\n任意选择一种即可",
+		 tooltip = "建议有经验的同学选择 QEMU 并进一步了解"]
+  utm_prebuid_p [label   = "是否使用已经安装完的 UTM 镜像? "
+		 tooltip = "会省去安装系统的时间"];
+
+
+  node [shape=rect];
+
+  utm         [label   = "下载 UTM",
+	       tooltip = "是免费下载的\nAppstore 付费只是为了支持作者的\n当然, 富哥随便",
+	       url     = "https://mac.getutm.app/"];
+  sys_img     [label   = "下载 Ubuntu 安装镜像",
+	       tooltip = "其他的镜像也可以"];
+  sys_install [label   = "安装 Ubuntu 系统",
+	       tooltip = "在网上搜索相关关键词即可"];
+  utm_down    [label   = "下载已经安装好的 UTM 镜像",
+	       tooltip = "https://mac.getutm.app/gallery/"];
+
+  vmware      [label   = "注册 BoardCOM 账号",
+	       tooltip = "点击 Register 注册",
+	       url     = "https://support.broadcom.com/"];
+  vmw_down    [label   = "下载 VMWare Fusion Pro",
+	       tooltip = "用 BoardCOM 账号登陆下载即可",
+	       url     = "https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Fusion"];
+
+  qemu        [label   = "QEMU",
+	       tooltip = "不建议新手使用",
+	       url     = "https://ucas-ctf.github.io/posts/setup-env-on-macOS#qemu-方案"];
+
+  select         -> utm             [label="方案 1"];
+  select         -> vmware          [label="方案 2"];
+  select         -> qemu            [label="方案 3"];
+
+  utm            -> utm_prebuid_p;
+  utm_prebuid_p  -> sys_img         [label="否"];
+  utm_prebuid_p  -> utm_down        [label="是"];
+
+  vmware         -> vmw_down;
+  vmw_down       -> sys_img;
+
+  sys_img        -> sys_install;
+}

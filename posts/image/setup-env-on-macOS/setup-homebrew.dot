@@ -1,0 +1,31 @@
+digraph {
+  node [shape=diamond,
+	fontname="Arial"];
+  edge [fontname="Arial"];
+
+  new   [label   = "是否安装有 Homebrew 或其他包管理器",
+	 tooltip = "也可以考虑使用 macport 或 nix 等其他包管理器, \n但是本文并不进行介绍"];
+  clt   [label   = "是否有安装过 CLT (Command Line Tool)",
+	 tooltip = "请在终端中运行\n xcode-select --version\n 以检查是否安装"];
+  vpn_p [label   = "是否有稳定快速的 Github 连接? ",
+	 tooltip = "理论上来说校园网访问 Github 还行, 虽然偶尔会抽风就是了"];
+
+  node [shape=rect];
+  install_clt   [label   = "安装 CLT, 在终端中执行\n xcode-select --install",
+		 tooltip = "该命令需要一定的网络连接",
+		 href    = "https://ucas-ctf.github.io/posts/setup-env-on-macOS#安装-clt-command-line-tools-for-xcode-命令行工具"];
+  install_brew  [label   = "安装 Hombrew, 在终端中执行\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"",
+		 tooltip = "具体安装可以参考 brew.sh 网站上的命令\n想要用国内镜像源的话请参考正文中的清华源的配置",
+		 href    = "https://ucas-ctf.github.io/posts/setup-env-on-macOS#安装-homebrew"];
+  brew_tsh      [label   = "配置清华源, 在终端中执行\nexport HOMEBREW_BREW_GIT_REMOTE=\"https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git\"\nexport HOMEBREW_CORE_GIT_REMOTE=\"https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git\"\nexport HOMEBREW_INSTALL_FROM_API=1",
+		 tooltip = "建议写到 ~/.zshrc 或者是 ~/.bashrc 中",
+		 href    = "https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/"];
+
+  new         -> clt          [label="无"];
+  clt         -> install_clt  [label="无"];
+  install_clt -> vpn_p;
+  clt         -> vpn_p        [label="有"];
+  vpn_p       -> brew_tsh     [label="无"];
+  vpn_p       -> install_brew [label="有"];
+  brew_tsh    -> install_brew;
+}

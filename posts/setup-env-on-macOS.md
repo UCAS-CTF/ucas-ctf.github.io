@@ -1,7 +1,13 @@
 # 在 macOS 上配置环境
 对于使用 macOS 的同学, 你可以参考 [macOS 上的坑和一些 tips](https://ucaskernel.com/d/775-macos-tips/) 这个 Kernel 的帖子来进行一些环境的配置.
 
+本文包含两个部分:
++ [Homebrew 配置](#Homebrew-配置)
++ [虚拟机的配置](#虚拟机的配置)
+
 ## Homebrew 配置
+![](./image/setup-env-on-macOS/setup-homebrew.svg)
+
 你需要一个 macOS 上的包管理器 [^1], 这里建议使用 [Homebrew](https://brew.sh) 来作为包管理器.
 
 [^1]: 你可以将包管理简单理解为一个命令行版本的软件商店. ([Package manager Wikipedia](https://en.wikipedia.org/wiki/Package_manager))
@@ -31,7 +37,7 @@ xcode-select --install
   /bin/bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)"
   ```
 
-  [^2] 所谓的环境变量, 可以理解为在 Shell 这个交互式程序 (REPL) 执行过程中的变量. 其中 `export` 的关键词用于将该变量名字在该 Shell 进程中设为 "全局" 的变量. 你可以通过 `$HOMEBREW_BREW_GIT_REMOTE` 的方式 (前缀 `$`) 来引用变量的值.
+[^2] 所谓的环境变量, 可以理解为在 Shell 这个交互式程序 (REPL) 执行过程中的变量. 其中 `export` 的关键词用于将该变量名字在该 Shell 进程中设为 "全局" 的变量. 你可以通过 `$HOMEBREW_BREW_GIT_REMOTE` 的方式 (前缀 `$`) 来引用变量的值.
 
 ### Homebrew 的日常使用
 + 下载包
@@ -52,6 +58,8 @@ xcode-select --install
 + 更多请自行阅读 `man brew` 或者 `brew help`.
 
 ## 虚拟机的配置
+![](./image/setup-env-on-macOS/setup-vm.svg)
+
 ### UTM 方案
 1. 从 [官网](https://mac.getutm.app) 下载 `.dmg` 镜像包 ([下载链接](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg)), 双击打开 (挂载), 将 `UTM.app` 移动到 `Application` (应用程序) 文件夹中;
 2. 运行 UTM 程序:
