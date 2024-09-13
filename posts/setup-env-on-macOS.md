@@ -37,7 +37,7 @@ xcode-select --install
   /bin/bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)"
   ```
 
-[^2] 所谓的环境变量, 可以理解为在 Shell 这个交互式程序 (REPL) 执行过程中的变量. 其中 `export` 的关键词用于将该变量名字在该 Shell 进程中设为 "全局" 的变量. 你可以通过 `$HOMEBREW_BREW_GIT_REMOTE` 的方式 (前缀 `$`) 来引用变量的值.
+[^2]: 所谓的环境变量, 可以理解为在 Shell 这个交互式程序 (REPL) 执行过程中的变量. 其中 `export` 的关键词用于将该变量名字在该 Shell 进程中设为 "全局" 的变量. 你可以通过 `$HOMEBREW_BREW_GIT_REMOTE` 的方式 (前缀 `$`) 来引用变量的值.
 
 ### Homebrew 的日常使用
 + 下载包
