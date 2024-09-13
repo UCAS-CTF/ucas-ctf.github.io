@@ -27,7 +27,7 @@ xcode-select --install
   ```
 + 你 **没有** 稳定快速的 Github 连接 ([清华源](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/))
 
-  在运行官网脚本之前请设置对应的环境变量 [^2] ([PATH (Wikipedia)](https://en.wikipedia.org/wiki/PATH_(variable)))
+  在运行官网脚本之前请设置对应的环境变量 ([PATH (Wikipedia)](https://en.wikipedia.org/wiki/PATH_(variable))) [^2].
 
   ```shell
   export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
