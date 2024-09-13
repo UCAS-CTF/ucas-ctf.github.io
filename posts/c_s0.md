@@ -1,4 +1,7 @@
 # C 语言基础
+
+Author: [jiuhao47](https://github.com/jiuhao47)
+
 ## Hello World
 ```c
 // helloworld.c

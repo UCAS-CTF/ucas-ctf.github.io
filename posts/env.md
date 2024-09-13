@@ -1,4 +1,7 @@
 # 第一次课
+
+Author: [jiuhao47](https://github.com/jiuhao47)
+
 ## 写在前面
 课程主要起引导作用，文档中给出的链接并不是唯一选择，且由于不同人的机器环境不同，给出的链接并不一定能运行在所有人的机器上。
 
@@ -7,12 +10,19 @@
 考虑到不是所有人都可以进行科学上网，故这里找的教程均为国内教程
 
 ## 环境安装
+
+> 此篇教程合集为Windows + VMware WorkStation + Ubuntu 22.04 + VScode(SSH)，[Mac请移步另一篇教程](https://ucas-ctf.github.io/posts/setup-env-on-macOS)
+
 ### Ubuntu 22.04 + VMware WorkStation 17 Pro
 
+> VMware-tools栏及以后不需要配置
 
 [VMware 安装配置 Ubuntu](https://blog.csdn.net/m0_70885101/article/details/137694608)
 
 ### Ubuntu 22.04 Apt换清华/阿里源
+
+> @li-yiyang: 新版本其实可以去掉这一步，默认就是清华源了
+> @jiuhao47: 这里的新版本应该指的是Ubuntu 22.04以后（不含Ubuntu 22.04）
 
 告别下载速度慢慢的Apt，装Ubuntu的要事之一（虽然但是有些时候不配置也问题不大）
 

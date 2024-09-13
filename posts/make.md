@@ -1,5 +1,7 @@
 # Makefile
 
+Author: [jiuhao47](https://github.com/jiuhao47)
+
 本教程基于[Makefile基础](https://liaoxuefeng.com/books/makefile/introduction/index.html)
 
 ## 安装

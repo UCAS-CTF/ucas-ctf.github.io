@@ -1,5 +1,7 @@
 # C 语言基础
 
+Author: [jiuhao47](https://github.com/jiuhao47)
+
 ## 基础变量类型
 
 ### 整型
