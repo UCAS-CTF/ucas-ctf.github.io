@@ -276,7 +276,7 @@ int main(){
 struct student{
     char name[20];
     int age;
-    char sex;
+    char gender;
 };
 ```
 
@@ -286,7 +286,7 @@ struct student{
 struct student{
     char name[20];
     int age;
-    char sex;
+    char gender;
 }Alice, Bob, Tom;// 声明三个结构体变量
 ```
 
@@ -296,7 +296,7 @@ struct student{
 struct student{
     char name[20];
     int age;
-    char sex;
+    char gender;
 };
 // ...
 struct student Alice, Bob, Tom;// 声明三个结构体变量
@@ -310,7 +310,7 @@ struct student Students[10];// 声明一个结构体数组
 ```c
 struct student Alice = {"Alice", 18, 'F'};
 struct student Bob = { 0 };
-struct student Tom = { .name = "Tom", .age = 20, .sex = 'M' };
+struct student Tom = { .name = "Tom", .age = 20, .gender = 'M' };
 ```
 
 也可以这样访问
@@ -319,7 +319,7 @@ struct student Tom = { .name = "Tom", .age = 20, .sex = 'M' };
 struct student Alice;
 Alice.name = "Alice";
 Alice.age = 18;
-Alice.sex = 'F';
+Alice.gender = 'F';
 ```
 
 如果定义的是一个结构体指针，则可以这样：
@@ -328,7 +328,7 @@ Alice.sex = 'F';
 struct student* p = &Alice;
 p->name = "Alice";
 p->age = 18;
-p->sex = 'F';
+p->gender = 'F';
 ```
 
 嵌套
@@ -337,7 +337,7 @@ p->sex = 'F';
 struct person{
     char name[20];
     int age;
-    char sex;
+    char gender;
     struct address{
         char city[20];
         char street[20];
@@ -360,7 +360,7 @@ struct person Alice = {"Alice", 18, 'F', {"Beijing", "Chaoyang", 1001}};
 typedef struct{
     char name[20];
     int age;
-    char sex;
+    char gender;
 }student;
 // ...
 
