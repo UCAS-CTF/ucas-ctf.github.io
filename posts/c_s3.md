@@ -373,11 +373,11 @@ typedef bool int;// c语言中没有bool类型，用int代替
 
 ## 位域（自行搜索）
 
-</p>
+<div>
 <details>
 略
 </details>
-<p>
+</div>
 
 # 内存管理
 
