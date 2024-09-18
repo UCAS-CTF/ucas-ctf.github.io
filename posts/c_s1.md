@@ -13,6 +13,7 @@ int a = 10;
 <summary>int 类型的变种</summary>
 
 包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。
+
 ```c
 int var_int;  
 short var_short; 
@@ -73,6 +74,8 @@ unsigned char var_unsigned_char;
 #include <stdbool.h>
 bool var_bool; 
 ```
+
+</details>
 
 `void`，主要用在函数返回值和参数中，表示无值或任意类型。
 
