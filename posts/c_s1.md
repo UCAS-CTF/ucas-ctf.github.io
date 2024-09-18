@@ -9,12 +9,11 @@ Author: [jiuhao47](https://github.com/jiuhao47)
 ```c
 int a = 10;
 ```
+<div>
 <details>
-
 <summary>int 类型的变种</summary>
 
 包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。
-
 ```c
 int var_int;  
 short var_short; 
@@ -27,6 +26,7 @@ unsigned long long var_unsigned_long_long;
 ```
 
 </details>
+</div>
 
 ### 浮点型
 
@@ -34,8 +34,8 @@ unsigned long long var_unsigned_long_long;
 float b = 3.14;
 ```
 
+<div>
 <details> 
-
 <summary>浮点型的变种</summary>
 
 包括 `float`，`double`，`long double`。
@@ -47,6 +47,7 @@ long double var_long_double;
 ```
 
 </details>
+</div>
 
 ### 字符型
 
@@ -54,8 +55,8 @@ long double var_long_double;
 char c = 'A';
 ```
 
+<div>
 <details>
-
 <summary>字符型的变种</summary>
 
 `char`，以及它的无符号版本 `unsigned char`。
@@ -64,11 +65,12 @@ char c = 'A';
 char var_char; 
 unsigned char var_unsigned_char; 
 ```
-
 </details>
+</div>
 
 ### 其他基本变量类型
 
+<div>
 <details>
 <summary>其他基本变量类型</summary>
 
@@ -93,6 +95,7 @@ enum color var_color;
 ```
 
 </details>
+</div>
 
 
 ## 语句
@@ -102,6 +105,7 @@ a = b + c;
 a = a + 1;
 ```
 
+<div>
 <details>
 <summary>其他的语句样式</summary>
 
@@ -118,6 +122,7 @@ a,b,c;
 a+=a,b,c++;
 ```
 </details>
+</div>
 
 ## 注释
 
@@ -147,6 +152,7 @@ a+=a,b,c++;
 - 赋值运算符：=, +=, -=, *=, /=, %=
     - =: 赋值
 
+<div>
 <details>
 <summary>更多运算符</summary>
 
@@ -174,6 +180,7 @@ a+=a,b,c++;
     - *: 取值
     - ->: 结构体指针访问成员
 </details>
+</div>
 
 ## 基础库函数
 
@@ -238,6 +245,7 @@ int main()
 
 ## 条件与循环
 
+
 ### 条件语句
 
 #### if 语句
@@ -270,6 +278,7 @@ if (condition1) {
 }
 ```
 
+<div>
 <details>
 <summary>条件语句的嵌套</summary>
 
@@ -286,7 +295,9 @@ if (condition1) {
 ```
 
 </details>
+</div>
 
+<div>
 <details>
 <summary>不完整条件语句</summary>
 
@@ -301,6 +312,7 @@ else if(condition2) {
 ```
 
 </details>
+</div>
 
 #### 示例程序——加、减、乘计算器
 ```c
@@ -344,6 +356,7 @@ do {
 } while (condition);
 ```
 
+<div>
 <details>
 <summary>while 和 do-while 的区别</summary>
 
@@ -368,6 +381,7 @@ do {
 ```
 
 </details>
+</div>
 
 
 #### for 循环
@@ -386,6 +400,7 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
+<div>
 <details>   
 <summary>循环语句的嵌套</summary>
 
@@ -398,8 +413,10 @@ for (int i = 0; i < 10; i++) {
 ```
 
 </details>
+</div>
 
 
+<div>
 <details>
 <summary>死循环</summary>
 
@@ -417,7 +434,7 @@ do {
 } while (1);
 ```
 
-</details>
+</details></div>
 
 #### 示例程序——1-10000的累加
 
