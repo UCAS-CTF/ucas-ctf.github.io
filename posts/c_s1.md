@@ -70,9 +70,6 @@ unsigned char var_unsigned_char;
 
 ### 其他基本变量类型
 
-<div>
-<details>
-<summary>其他基本变量类型</summary> 
 
 `bool`（需要包含头文件 `stdbool.h`）。
 
@@ -87,8 +84,6 @@ void func1();
 enum color { red, green, blue };
 // enum color var_color;
 ```
-</details>
-</div>   
 
 
 ## 语句
