@@ -10,6 +10,7 @@ Author: [jiuhao47](https://github.com/jiuhao47)
 int a = 10;
 ```
 <details>
+
 <summary>int 类型的变种</summary>
 
 包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。
@@ -34,6 +35,7 @@ float b = 3.14;
 ```
 
 <details> 
+
 <summary>浮点型的变种</summary>
 
 包括 `float`，`double`，`long double`。
@@ -53,6 +55,7 @@ char c = 'A';
 ```
 
 <details>
+
 <summary>字符型的变种</summary>
 
 `char`，以及它的无符号版本 `unsigned char`。
@@ -61,6 +64,7 @@ char c = 'A';
 char var_char; 
 unsigned char var_unsigned_char; 
 ```
+
 </details>
 
 ### 其他基本变量类型
@@ -74,8 +78,6 @@ unsigned char var_unsigned_char;
 #include <stdbool.h>
 bool var_bool; 
 ```
-
-</details>
 
 `void`，主要用在函数返回值和参数中，表示无值或任意类型。
 
