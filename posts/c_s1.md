@@ -38,6 +38,8 @@ float b = 3.14;
 <details> 
 <summary>浮点型的变种</summary>
 
+<div markdown="1">
+
 包括 `float`，`double`，`long double`。
 
 ```c
@@ -46,6 +48,7 @@ double var_double;
 long double var_long_double;
 ```
 
+</div>
 </details>
 
 ### 字符型
@@ -57,12 +60,16 @@ char c = 'A';
 <details>
 <summary>字符型的变种</summary>
 
+<div markdown="1">
+
 `char`，以及它的无符号版本 `unsigned char`。
 
 ```c
 char var_char; 
 unsigned char var_unsigned_char; 
 ```
+
+</div>
 </details>
 
 ### 其他基本变量类型
@@ -99,6 +106,8 @@ a = a + 1;
 <details>
 <summary>其他的语句样式</summary>
 
+<div markdown="1">
+
 ```c
 int a,b,c;
 a=b=c=1;
@@ -111,6 +120,8 @@ a,b,c;
 ;
 a+=a,b,c++;
 ```
+
+</div>
 </details>
 
 ## 注释
@@ -144,6 +155,8 @@ a+=a,b,c++;
 <details>
 <summary>更多运算符</summary>
 
+<div markdown="1">
+
 - 位运算符：&, |, ^, ~, <<, >>
     - &: 与
     - |: 或
@@ -167,6 +180,8 @@ a+=a,b,c++;
     - &: 取地址
     - *: 取值
     - ->: 结构体指针访问成员
+
+</div>
 </details>
 
 ## 基础库函数
@@ -268,6 +283,8 @@ if (condition1) {
 <details>
 <summary>条件语句的嵌套</summary>
 
+<div markdown="1">
+
 ```c
 if (condition1) {
     if (condition2) {
@@ -279,11 +296,13 @@ if (condition1) {
     // code
 }
 ```
-
+</div>
 </details>
 
 <details>
 <summary>不完整条件语句</summary>
+
+<div markdown="1">
 
 ```c
 if (condition1) {
@@ -294,7 +313,7 @@ else if(condition2) {
 }
 
 ```
-
+</div>
 </details>
 
 #### 示例程序——加、减、乘计算器
@@ -342,6 +361,8 @@ do {
 <details>
 <summary>while 和 do-while 的区别</summary>
 
+<div markdown="1">
+
 ```c
 int i = 0;
 while (i > 0) {
@@ -361,7 +382,7 @@ do {
 // do-while 会先执行一次循环体，再判断循环条件
 // while 先判断循环条件，再执行循环体
 ```
-
+</div>
 </details>
 
 #### for 循环
@@ -383,6 +404,8 @@ for (int i = 0; i < 10; i++) {
 <details>   
 <summary>循环语句的嵌套</summary>
 
+<div markdown="1">
+
 ```c
 for (int i = 0; i < 10; i++) {
     for (int j = 0; j < 10; j++) {
@@ -391,11 +414,15 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
+</div>
+
 </details>
 
 
 <details>
 <summary>死循环</summary>
+
+<div markdown="1">
 
 ```c
 for (;;) {
@@ -410,7 +437,7 @@ do {
     // code
 } while (1);
 ```
-
+</div>
 </details>
 
 #### 示例程序——1-10000的累加
