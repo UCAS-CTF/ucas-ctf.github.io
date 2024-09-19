@@ -11,10 +11,10 @@ int a = 10;
 ```
 <div>
 <details>
-<summary>int 类型的变种</summary>
+<summary markdown="span">int 类型的变种</summary>
 
-<p>包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。</p>
-<pre><code>
+包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。
+```c
 int var_int;  
 short var_short; 
 long var_long; 
@@ -23,7 +23,8 @@ unsigned int var_unsigned_int;
 unsigned short var_unsigned_short; 
 unsigned long var_unsigned_long; 
 unsigned long long var_unsigned_long_long; 
-</code></pre>
+```
+
 </details>
 </div>
 
@@ -35,7 +36,7 @@ float b = 3.14;
 
 <div>
 <details> 
-<summary>浮点型的变种</summary>
+<summary markdown="span">浮点型的变种</summary>
 
 包括 `float`，`double`，`long double`。
 
@@ -56,7 +57,7 @@ char c = 'A';
 
 <div>
 <details>
-<summary>字符型的变种</summary>
+<summary markdown="span">字符型的变种</summary>
 
 `char`，以及它的无符号版本 `unsigned char`。
 
@@ -69,20 +70,26 @@ unsigned char var_unsigned_char;
 
 ### 其他基本变量类型
 
+<div>
+<details>
+<summary markdown="span">其他基本变量类型</summary> 
 
 `bool`（需要包含头文件 `stdbool.h`）。
-
-`void`，主要用在函数返回值和参数中，表示无值或任意类型。
-
-`enum`，用于定义在程序中只能取一定范围内的值的类型。
-
 ```c
 #include <stdbool.h>
 bool var_bool; 
-void func1();
-enum color { red, green, blue };
-// enum color var_color;
 ```
+`void`，主要用在函数返回值和参数中，表示无值或任意类型。
+```c
+void func1();
+```
+`enum`，用于定义在程序中只能取一定范围内的值的类型。
+```c
+enum color { red, green, blue };
+enum color var_color;
+```
+</details>
+</div>   
 
 
 ## 语句
@@ -94,7 +101,7 @@ a = a + 1;
 
 <div>
 <details>
-<summary>其他的语句样式</summary>
+<summary markdown="span">其他的语句样式</summary>
 
 ```c
 int a,b,c;
@@ -141,7 +148,7 @@ a+=a,b,c++;
 
 <div>
 <details>
-<summary>更多运算符</summary>
+<summary markdown="span">更多运算符</summary>
 
 - 位运算符：&, |, ^, ~, <<, >>
     - &: 与
@@ -267,7 +274,7 @@ if (condition1) {
 
 <div>
 <details>
-<summary>条件语句的嵌套</summary>
+<summary markdown="span">条件语句的嵌套</summary>
 
 ```c
 if (condition1) {
@@ -286,7 +293,7 @@ if (condition1) {
 
 <div>
 <details>
-<summary>不完整条件语句</summary>
+<summary markdown="span">不完整条件语句</summary>
 
 ```c
 if (condition1) {
@@ -345,7 +352,7 @@ do {
 
 <div>
 <details>
-<summary>while 和 do-while 的区别</summary>
+<summary markdown="span">while 和 do-while 的区别</summary>
 
 ```c
 int i = 0;
@@ -389,7 +396,7 @@ for (int i = 0; i < 10; i++) {
 
 <div>
 <details>   
-<summary>循环语句的嵌套</summary>
+<summary markdown="span">循环语句的嵌套</summary>
 
 ```c
 for (int i = 0; i < 10; i++) {
@@ -405,7 +412,7 @@ for (int i = 0; i < 10; i++) {
 
 <div>
 <details>
-<summary>死循环</summary>
+<summary markdown="span">死循环</summary>
 
 ```c
 for (;;) {
