@@ -9,7 +9,6 @@ Author: [jiuhao47](https://github.com/jiuhao47)
 ```c
 int a = 10;
 ```
-<div>
 <details>
 <summary>int 类型的变种</summary>
 
@@ -23,9 +22,8 @@ unsigned int var_unsigned_int;
 unsigned short var_unsigned_short; 
 unsigned long var_unsigned_long; 
 unsigned long long var_unsigned_long_long; 
-</code></pre>
+</pre><code>
 </details>
-</div>
 
 ### 浮点型
 
@@ -33,7 +31,6 @@ unsigned long long var_unsigned_long_long;
 float b = 3.14;
 ```
 
-<div>
 <details> 
 <summary>浮点型的变种</summary>
 
@@ -46,7 +43,6 @@ long double var_long_double;
 ```
 
 </details>
-</div>
 
 ### 字符型
 
@@ -54,7 +50,6 @@ long double var_long_double;
 char c = 'A';
 ```
 
-<div>
 <details>
 <summary>字符型的变种</summary>
 
@@ -65,24 +60,27 @@ char var_char;
 unsigned char var_unsigned_char; 
 ```
 </details>
-</div>
 
 ### 其他基本变量类型
 
+<details>
+<summary>其他基本变量类型</summary> 
 
 `bool`（需要包含头文件 `stdbool.h`）。
-
-`void`，主要用在函数返回值和参数中，表示无值或任意类型。
-
-`enum`，用于定义在程序中只能取一定范围内的值的类型。
-
 ```c
 #include <stdbool.h>
 bool var_bool; 
-void func1();
-enum color { red, green, blue };
-// enum color var_color;
 ```
+`void`，主要用在函数返回值和参数中，表示无值或任意类型。
+```c
+void func1();
+```
+`enum`，用于定义在程序中只能取一定范围内的值的类型。
+```c
+enum color { red, green, blue };
+enum color var_color;
+```
+</details>
 
 
 ## 语句
@@ -92,7 +90,6 @@ a = b + c;
 a = a + 1;
 ```
 
-<div>
 <details>
 <summary>其他的语句样式</summary>
 
@@ -109,7 +106,6 @@ a,b,c;
 a+=a,b,c++;
 ```
 </details>
-</div>
 
 ## 注释
 
@@ -139,7 +135,6 @@ a+=a,b,c++;
 - 赋值运算符：=, +=, -=, *=, /=, %=
     - =: 赋值
 
-<div>
 <details>
 <summary>更多运算符</summary>
 
@@ -167,7 +162,6 @@ a+=a,b,c++;
     - *: 取值
     - ->: 结构体指针访问成员
 </details>
-</div>
 
 ## 基础库函数
 
@@ -265,7 +259,6 @@ if (condition1) {
 }
 ```
 
-<div>
 <details>
 <summary>条件语句的嵌套</summary>
 
@@ -282,9 +275,7 @@ if (condition1) {
 ```
 
 </details>
-</div>
 
-<div>
 <details>
 <summary>不完整条件语句</summary>
 
@@ -299,7 +290,6 @@ else if(condition2) {
 ```
 
 </details>
-</div>
 
 #### 示例程序——加、减、乘计算器
 ```c
@@ -343,7 +333,6 @@ do {
 } while (condition);
 ```
 
-<div>
 <details>
 <summary>while 和 do-while 的区别</summary>
 
@@ -368,8 +357,6 @@ do {
 ```
 
 </details>
-</div>
-
 
 #### for 循环
 
@@ -387,7 +374,6 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-<div>
 <details>   
 <summary>循环语句的嵌套</summary>
 
@@ -400,10 +386,8 @@ for (int i = 0; i < 10; i++) {
 ```
 
 </details>
-</div>
 
 
-<div>
 <details>
 <summary>死循环</summary>
 
@@ -421,7 +405,7 @@ do {
 } while (1);
 ```
 
-</details></div>
+</details>
 
 #### 示例程序——1-10000的累加
 
