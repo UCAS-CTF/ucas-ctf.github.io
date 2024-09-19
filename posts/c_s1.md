@@ -95,6 +95,7 @@ enum color { red, green, blue };
 enum color var_color;
 ```
 
+### 变量-内存
 
 ## 语句
 
@@ -315,6 +316,12 @@ else if(condition2) {
 ```
 </div>
 </details>
+
+#### 流程图/控制流图
+
+[流程图](https://zh.wikipedia.org/wiki/%E6%B5%81%E7%A8%8B%E5%9B%BE)
+
+[控制流图]（https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E6%B5%81%E5%9C%96）
 
 #### 示例程序——加、减、乘计算器
 ```c
