@@ -1,0 +1,9 @@
+# This config file is to setup ucas-ctf.github.io.
+title: UCAS CTF
+
+# switch to kramdown for correct GFM markdown
+# with support for HTML tags like details and summary.
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
