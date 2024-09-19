@@ -13,8 +13,8 @@ int a = 10;
 <details>
 <summary>int 类型的变种</summary>
 
-包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。
-```c
+<p>包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。</p>
+<pre><code>
 int var_int;  
 short var_short; 
 long var_long; 
@@ -23,8 +23,7 @@ unsigned int var_unsigned_int;
 unsigned short var_unsigned_short; 
 unsigned long var_unsigned_long; 
 unsigned long long var_unsigned_long_long; 
-```
-
+</pre><code>
 </details>
 </div>
 
