@@ -12,6 +12,8 @@ int a = 10;
 <details>
 <summary>int 类型的变种</summary>
 
+<div markdown="1">
+
 包括 `int`，`short`，`long`，`long long`，以及它们的无符号版本 `unsigned int`，`unsigned short`，`unsigned long`，`unsigned long long`。
 ```c
 int var_int;  
@@ -23,6 +25,7 @@ unsigned short var_unsigned_short;
 unsigned long var_unsigned_long; 
 unsigned long long var_unsigned_long_long; 
 ```
+</div>
 
 </details>
 
@@ -64,24 +67,26 @@ unsigned char var_unsigned_char;
 
 ### 其他基本变量类型
 
-<details>
-<summary>其他基本变量类型</summary> 
 
 `bool`（需要包含头文件 `stdbool.h`）。
+
 ```c
 #include <stdbool.h>
 bool var_bool; 
 ```
+
 `void`，主要用在函数返回值和参数中，表示无值或任意类型。
+
 ```c
 void func1();
 ```
+
 `enum`，用于定义在程序中只能取一定范围内的值的类型。
+
 ```c
 enum color { red, green, blue };
 enum color var_color;
 ```
-</details>
 
 
 ## 语句
