@@ -23,7 +23,7 @@ unsigned int var_unsigned_int;
 unsigned short var_unsigned_short; 
 unsigned long var_unsigned_long; 
 unsigned long long var_unsigned_long_long; 
-</pre></code>
+</code></pre>
 </details>
 </div>
 
