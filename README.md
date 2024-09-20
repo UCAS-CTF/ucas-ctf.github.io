@@ -16,7 +16,7 @@
 
 #### Q&A
 
-[答疑——虚拟机及C语言环境配置相关问题的解答](https://ucas-ctf.github.io/posts/q&a_1)
+[答疑——虚拟机及C语言环境配置相关问题的解答](https://ucas-ctf.github.io/posts/qa_1)
 
 ### 第一次课
 
