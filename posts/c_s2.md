@@ -473,7 +473,7 @@ struct Student
 
 int main()
 {
-    struct Student s[3] = {{"Tom", 18, 90.0}, {"Jerry", 19, 80.0}, {"Alice", 20, 70.0}};
+    struct Student s[3] = { {"Tom", 18, 90.0}, {"Jerry", 19, 80.0}, {"Alice", 20, 70.0} };
     for (int i = 0; i < 3; i++)
     {
         printf("Name: %s\n", s[i].name);
