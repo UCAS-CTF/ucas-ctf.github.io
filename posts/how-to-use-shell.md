@@ -97,7 +97,9 @@
   根据你的输出结果:
 
   <details>
-  <summary>选择: `bash: xxx: command not found`</summary>
+  <summary markdown=1>
+  选择: `bash: xxx: command not found`
+  </summary>
   <div markdown="1">
   请仔细看看你的 `xxx` 部分是否输入正确, 真的是 `echo` 吗?
   若是, 则你的 Linux 可能有些不太对劲. 请检查 `PATH` 是否正确,
@@ -114,7 +116,9 @@
   </details>
 
   <details>
-  <summary>选择: 输出差不多, 但是最后显示的是类似于 `zsh`, `fish` 这样的东西</summary>
+  <summary markdown=1>
+  选择: 输出差不多, 但是最后显示的是类似于 `zsh`, `fish` 这样的东西
+  </summary>
   <div markdown="1">
   这倒不是什么大问题, 这说明你的默认 shell 是 [ZSH](https://en.wikipedia.org/wiki/Z_shell), [Fish](https://en.wikipedia.org/wiki/Fish_(Unix_shell)) 这样的 shell.
   你可以通过输入 `bash` 命令来切换到 BASH.
@@ -165,7 +169,9 @@
 
       其中 `..` 表示上级目录, 而 `.` 表示当前目录.
 
-      <details markdown=1><summary>历史: 隐藏文件的命名</summary>
+      <details>
+      <summary>历史: 隐藏文件的命名</summary>
+      <div markdown=1>
       由于 `..` 和 `.` 的命名特殊性, 历史上 `ls` 命令默认会不显示这两个文件.
       而做到这一点的方式非常的粗暴: 凡是以 `.` 开头的文件都不会显示.
 
@@ -261,7 +267,9 @@
     这一组参数实际上会以一个数组 (列表) 的形式 (以空格为) 分隔传给程序.
   + `# ...` 注释, 在 `#` 后的会被 BASH 忽略
 
-  <details markdown=1><summary markdown=1>拓展: 在 `main` 函数中的参数处理</summary>
+  <details>
+  <summary markdown=1>拓展: 在 `main` 函数中的参数处理</summary>
+  <div markdown=1>
   用一个 `main` 函数来理解估计会非常方便:
 
   ```c
@@ -301,6 +309,7 @@
   显然, 你可以通过编写一个 argparser 的函数来处理输入的参数, 然后根据参数,
   输出你应当输出的结果.
 
+  </div>
   </details>
 + 输入与输出
 
@@ -309,7 +318,7 @@
   <div markdown="1">
   这些输入与输出其实对应的就是 C 语言中我们的 `stdin` (standard input) 与
   `stdout`(standard output). 这也是为什么我们在编写 `read` 类型的函数的时候,
-  会用 `EOF` (**E**​nd **O**​f **F**​ile) 来作为输入的终止. 
+  会用 `EOF` (**E**​nd **O**​f **F**​ile) 来作为输入的终止.
   </div>
   </details>
   + pipline `|`: 将前一个命令的结果作为下一条命令的输入
