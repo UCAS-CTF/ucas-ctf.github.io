@@ -74,8 +74,11 @@ scanf("%c", &ch); // 输入一个字符
 char* p1;
 int* p2;
 float* p3;
-struct student* p4;// 结构体指针
+void* p4; // 无类型指针
+struct student* p5;// 结构体指针
 ```
+
+`void *` 类型指针比较常见，通常见于函数返回值，我们在使用这个指针时需要进行强制类型转换变为其他指针。
 
 从一个指针中获取指针指向地址的值，需要用 `*` 运算符
 
@@ -205,7 +208,7 @@ int (*p)[5];
 int arr[10][5]={0};// 声明一个二维数组 arr，其长度为10，每一项的长度为5
 // 即 arr[i] 的值为一个长度为5的数组的地址
 printf("%p\n",arr[0]);
-// 0x7fffe96653b0
+// 0x7fffe96653b0 (这是我电脑里的地址)
 
 // a;//代表数组首行地址，一般用a[0][0]的地址表示
 // &a;//代表整个数组的地址，一般用a[0][0]地址表示
@@ -263,6 +266,42 @@ printf("%d\n",p[2][0]);
 2. 指针数组简单理解为“指针的数组”，首先这个变量是一个数组，其次，”指针p”修饰这个数组，意思是说这个数组的所有元素都是指针类型。
 
 
+### 指针与结构体
+
+用指针指向结构体
+
+```c
+typedef struct person{
+    char name[20];
+    int age;
+    char gender;
+}Person;
+
+int main(){
+    Person* p = (Person*)malloc(sizeof(Person)); // 分配一个 Person 结构体的内存
+    p->name = "Alice";
+    p->age = 18;
+    p->gender = 'F';
+    printf("%s is %d years old and %c\n", p->name, p->age, p->gender);
+    // Alice is 18 years old and F
+    free(p); // 释放该内存块
+    p=NULL; // 置空指针
+    return 0;
+}
+```
+
+结构体中可以包含指针，下面是一个单链表的节点
+
+```c
+typedef struct node{
+    int data;
+    struct node* next;
+}Node;
+```
+
+
+
+
 ### 指针与函数
 
 #### 指针作为函数参数
@@ -298,6 +337,20 @@ int main(){
 // after: 100 2 3
 ```
 
+结构体也通常以指针的形式传入函数中，或作为函数的返回值
+
+```c
+int get_age(struct person* p){
+    return p->age;
+}
+
+Node* get_next(Node* p){
+    return p->next;
+}
+```
+
+
+
 指针作为参数传入函数，最主要的作用是实现在函数内实现外部变量的修改。
 
 
@@ -306,7 +359,7 @@ int main(){
 ## 结构体
 
 <details>
-<summary>详情在上一篇教程</summary>
+<summary>详情在上一篇教程，你要是想看也行</summary>
 
 <div markdown="1">
 
@@ -463,5 +516,60 @@ int main(){
 一般地，在函数内声明的变量储存在栈 (stack) 上；刚刚提过的、手动分配的变量储存在堆 (heap) 上；
 一些常量，比如 `printf("hello");` 中的 `"hello"` 储存在程序文件内的 `.rodata` 段 (read-only data segment) 上；全局变量储存在程序文件的 `.bss` 段 (block started by symbol) 上。
 
+![进程的内存空间](https://img-blog.csdnimg.cn/img_convert/9e1c67c4a8d3f61041f74721935ebf0c.png)
+
+## 综合应用
+
+结合本次课及之前的C语言基础知识，我们可以写出一些更为复杂的东西，比如一个简短版的学生管理系统。
+
+下面是一个简单的例子
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_STUDENTS 100
+#define MAX_CLASSES 10
+
+typedef struct{
+    char name[20];
+    int age;
+    int score;
+    char gender;
+}Student;
+
+void print_student(Student s){
+    printf("%s is %d years old and %c\n", s.name, s.age, s.gender);
+}
+
+Student* create_student(char* name, int age, int score, char gender){
+    student* p = (Student*)malloc(sizeof(Student));
+    p->name = name;
+    p->age = age;
+    p->score = score;
+    p->gender = gender;
+    return p;
+}
+
+void delete_student(Student* p){
+    free(p);
+}
+
+int main(){
+    // 自行实现一些管理功能吧
+    // 比如弄一个叫school的数组，里面有10个班级，每个班级有100个学生
+    // 然后可以实现增删改查功能
+    // 增删功能可以用函数实现，比如create_student, delete_student
+    // 当然，你自己也可以定义一些函数来实现查找功能等等
+    return 0;
+}
+```
+
+
 ## gdb调试
 
+
+
+## 补充
+
+关于 `main` 函数参数的简介
