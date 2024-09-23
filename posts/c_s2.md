@@ -1,6 +1,18 @@
-# C 语言基础
+# C 语言基础——第二次课
 
 Author: [Crazy_13754](https://github.com/Crazy-13754)
+
+## 评测软件使用
+
+统一使用 LemonLime 评测软件，已在课程群文件中上传静态链接版本。
+
+将其放在你虚拟机的某个文件夹中，然后使用
+
+`chmod +x LemonLime-linux-x86_64-Release` 或 `chmod +x LemonLime-linux-qt6-x86_64-Release` 赋予可执行权限。
+
+再 `./chmod +x LemonLime-linux-x86_64-Release` 或 `chmod +x LemonLime-linux-qt6-x86_64-Release` 即可。
+
+！讲软件使用与基础的 .md 阅读
 
 本次课将讲解C语言循环结构、C语言函数、C语言数组、递归思想、计算机抽象的概念，介绍相关的编程理念。
 
@@ -21,9 +33,9 @@ int sum = 1 + 2 + 3 + 4 + 5 + ... + 100;
 
 int main()
 {
-    int i;
+    int i = 1;
 loop:
-    if (i < 100)
+    if (i < 101)
     {
         printf("%d\n", i);
         i++;
@@ -40,7 +52,7 @@ loop:
 
 int main()
 {
-    for (int i = 0; i < 100; i++)
+    for (int i = 1; i < 101; i++)
     {
         printf("%d\n", i);
     }
@@ -55,8 +67,8 @@ int main()
 
 int main()
 {
-    int i = 0;
-    while (i < 100)
+    int i = 1;
+    while (i < 101)
     {
         printf("%d\n", i);
         i++;
@@ -72,12 +84,12 @@ int main()
 
 int main()
 {
-    int i = 0;
+    int i = 1;
     do
     {
         printf("%d\n", i);
         i++;
-    } while (i < 100);
+    } while (i < 101);
     return 0;
 }
 ```
@@ -124,6 +136,67 @@ int main()
     {
         printf("Hello, World!\n");
     } while (1);
+    return 0;
+}
+```
+
+`break` 语句可以用来跳出循环：
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 5)
+        {
+            break;
+        }
+        printf("%d\n", i);
+    }
+    return 0;
+}
+```
+
+`continue` 语句可以用来跳过本轮循环：
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 5)
+        {
+            continue;
+        }
+        printf("%d\n", i);
+    }
+    return 0;
+}
+```
+
+使用`continue` 与 `break` 的实例：
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 5)
+        {
+            continue;
+        }
+        if (i == 7)
+        {
+            break;
+        }
+        printf("%d\n", i);
+    }
     return 0;
 }
 ```
@@ -228,6 +301,26 @@ int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     for (int i = 0; i < 5; ++i)
     {
         printf("%d\n", list3[i]);
+    }
+```
+
+当然，这个操作有快捷方式：
+
+```c
+    int list4[5] = {0};
+    for (int i = 0; i < 5; ++i)
+    {
+        printf("%d\n", list4[i]);
+    }
+```
+
+以及用 `[a ... b]` 这个操作：
+
+```c
+    int list5[5] = {[0 ... 4] = 1};
+    for (int i = 0; i < 5; ++i)
+    {
+        printf("%d\n", list5[i]);
     }
 ```
 
@@ -425,6 +518,7 @@ struct Student
 
 ```c
 struct Student s = {"Tom", 18, 90.0};
+struct Student s = {.name = "Tom", .age = 18, .score = 90.0};
 ```
 
 ### 结构体的访问
