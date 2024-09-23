@@ -32,6 +32,6 @@
 
 ### 第三次课
 
-[C基础——指针、结构体与内存管理](https://ucas-ctf.github.io/posts/c_s3)
+[C基础——指针、内存管理、gdb调试](https://ucas-ctf.github.io/posts/c_s3)
 
 
