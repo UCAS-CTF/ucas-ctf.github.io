@@ -2,17 +2,30 @@
 
 Author: [Crazy_13754](https://github.com/Crazy-13754)
 
-## 评测软件使用
+## 评测数据使用(与上课无关)
 
-统一使用 LemonLime 评测软件，已在课程群文件中上传静态链接版本。
+使用如下的命令行：
+```bash
+PROBLEM_NAME=a; SOURCE_NUMBER=1; gcc -o $PROBLEM_NAME.run $PROBLEM_NAME.c; chmod +x $PROBLEM_NAME.run; ./$PROBLEM_NAME.run < $PROBLEM_NAME/$SOURCE_NUMBER.in > output.txt && diff -w output.txt $PROBLEM_NAME/$SOURCE_NUMBER.out
+```
 
-将其放在你虚拟机的某个文件夹中，然后使用
+它改成 .sh 是这样的：
+```bash
+#!/bin/bash
 
-`chmod +x LemonLime-linux-x86_64-Release` 或 `chmod +x LemonLime-linux-qt6-x86_64-Release` 赋予可执行权限。
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <program_name> <source_number>"
+    exit 1
+fi
 
-再 `./chmod +x LemonLime-linux-x86_64-Release` 或 `chmod +x LemonLime-linux-qt6-x86_64-Release` 即可。
+PROBLEM_NAME=$1
+SOURCE_NUMBER=$2
 
-！讲软件使用与基础的 .md 阅读
+gcc -o $PROBLEM_NAME.run $PROBLEM_NAME.c
+chmod +x $PROBLEM_NAME.run
+./$PROBLEM_NAME.run < $PROBLEM_NAME/$SOURCE_NUMBER.in > output.txt && diff -w output.txt $PROBLEM_NAME/$SOURCE_NUMBER.out
+```
+使用 ./cmp.sh a 1 就可以了。
 
 本次课将讲解C语言循环结构、C语言函数、C语言数组、递归思想、计算机抽象的概念，介绍相关的编程理念。
 
@@ -266,6 +279,16 @@ int a[10];
 int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 ```
 
+以及用 `[a ... b]` 这个操作：
+
+```c
+    int list5[5] = {[0 ... 4] = 1};
+    for (int i = 0; i < 5; ++i)
+    {
+        printf("%d\n", list5[i]);
+    }
+```
+
 编译器将会根据初始化列表的元素个数来确定数组的长度。
 
 ### 数组的初始化
@@ -311,16 +334,6 @@ int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     for (int i = 0; i < 5; ++i)
     {
         printf("%d\n", list4[i]);
-    }
-```
-
-以及用 `[a ... b]` 这个操作：
-
-```c
-    int list5[5] = {[0 ... 4] = 1};
-    for (int i = 0; i < 5; ++i)
-    {
-        printf("%d\n", list5[i]);
     }
 ```
 
@@ -441,7 +454,6 @@ int main()
 #### 示例程序——斐波那契数列
 
 ```c
-
 #include <stdio.h>
 
 int fibonacci(int n)
@@ -468,8 +480,7 @@ int main()
     return 0;
 }
 ```
-
-递归并不是万能的，它有时候会导致栈溢出。因为递归的本质是函数的调用，每次调用函数都会在栈上分配一块内存，如果递归的层次太深，栈的内存就会被耗尽。
+其实有一个地方叫做程序堆栈，每次调用函数都会在堆栈上分配一块内存，这块内存叫做栈帧，栈帧中存放了函数的参数、局部变量、返回地址等信息。当函数调用结束时，栈帧会被销毁，栈帧中的内存会被释放。递归的本质就是函数的调用，每次调用函数都会在堆栈上分配一块内存，如果递归的层次太深，堆栈的内存就会被耗尽。
 
 ### 示例程序——汉诺塔
 
@@ -531,6 +542,23 @@ printf("Score: %.1f\n", s.score);
 
 ### 结构体的应用
 
+加一个 type def：
+
+```c
+typedef struct Student
+{
+    char name[20];
+    int age;
+    float score;
+} Student;
+```
+
+这样就可以这样定义结构体变量：
+
+```c
+Student s = {"Tom", 18, 90.0};
+```
+
 #### 示例程序——学生信息管理系统
 
 ```c
@@ -581,39 +609,3 @@ int main()
 ## 计算机抽象
 
 计算机抽象是计算机科学中的一个重要概念，它是指将计算机的各个部分抽象为一个个的模块，从而简化计算机的设计和实现。
-
-这里我们讨论的是 C 语言中的抽象，C 语言中的抽象是通过函数与多文件结构来实现的。
-
-```c
-// add.h
-#ifndef ADD_H
-#define ADD_H
-
-int add(int a, int b);
-
-#endif
-```
-
-```c
-// add.c
-#include "add.h"
-
-int add(int a, int b)
-{
-    return a + b;
-}
-```
-
-```c
-
-// main.c
-#include <stdio.h>
-#include "add.h"
-
-int main()
-{
-    int sum = add(1, 2);
-    printf("%d\n", sum);
-    return 0;
-}
-```

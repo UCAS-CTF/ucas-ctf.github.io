@@ -26,6 +26,8 @@
 
 [C基础——数据类型](https://ucas-ctf.github.io/posts/c_s1)
 
+[C基础——循环结构、函数、数组、递归、计算机抽象](https://ucas-ctf.github.io/posts/c_s2)
+
 #### 补充资料
 
 [C基础——Makefile与Cmake](https://ucas-ctf.github.io/posts/make)
