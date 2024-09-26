@@ -36,8 +36,15 @@
 
 [C基础——Makefile与Cmake](https://ucas-ctf.github.io/posts/make)
 
+
 ### 第三次课
+
+#### 讲义
 
 [C基础——指针、内存管理、gdb调试](https://ucas-ctf.github.io/posts/c_s3)
 
+### 第四次课
 
+#### 讲义
+
+[C语言进阶——线性表与单向链表](https://ucas-ctf.github.io/posts/ds_s1)
