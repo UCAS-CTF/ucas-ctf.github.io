@@ -26,6 +26,10 @@
 
 [C基础——数据类型](https://ucas-ctf.github.io/posts/c_s1)
 
+### 第二次课
+
+#### 讲义
+
 [C基础——循环结构、函数、数组、递归、计算机抽象](https://ucas-ctf.github.io/posts/c_s2)
 
 #### 补充资料
