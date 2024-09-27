@@ -48,3 +48,7 @@
 #### 讲义
 
 [C语言进阶——线性表与单向链表](https://ucas-ctf.github.io/posts/ds_s1)
+
+[C语言进阶——栈](https://ucas-ctf.github.io/posts/ds_s2)
+
+[C语言进阶——队列](https://ucas-ctf.github.io/posts/ds_s3)
