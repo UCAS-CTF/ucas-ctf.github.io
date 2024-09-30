@@ -32,6 +32,10 @@
 
 [C基础——数据类型](https://ucas-ctf.github.io/posts/c_s1)
 
+#### 课堂笔记
+
+[2024.09.29 C基础第一次课笔记](https://ucas-ctf.github.io/posts/c_s1_notes)
+
 #### 补充资料
 
 [计算机基本组成与结构](https://ucas-ctf.github.io/posts/ca)
