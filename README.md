@@ -2,7 +2,7 @@
 
 ## 2024秋
 
-> [**UCAS本科CTF编程练习平台**](https://github.com/UCAS-CTF/Coding)
+> [**UCAS本科CTF编程练习平台**](https://ucas-ctf.github.io/Coding)
 > 
 > 目前仅更新了部分题目，测评系统和更多习题敬请期待！
 
