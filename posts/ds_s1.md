@@ -1,7 +1,5 @@
 # 数据结构入门：线性表与链表
 
-Author: [doyo](https://github.com/doyo2024)
-
 ## 线性表
 
 **线性表（list）** 是最基础最简单的数据结构，它就是线性排布的一串数据。在这串数据的任何一个位置，都可以执行下列操作中的任何一个：
@@ -19,7 +17,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 从上面的介绍可以发现，链表中的元素主要有两个必要的成员：一个是被存放其中的数据，另一个是用来链接结点的指针。因此，我们可以按下述方式定义链表中的一个结点：
 
-```C
+```c
 typedef int ElemType;
 struct node {
     ElemType data;
@@ -31,7 +29,7 @@ struct node {
 
 由于链表是通过在一起的，我们可以通过沿着next指针向后走来访问表中的其它元素。换言之，只要知道了表中的第一个元素（称之为**表头**），我们就可以便利整个链表。所以，我们还需要一个表头指针：
 
-```C
+```c
 struct node *list;
 ```
 
@@ -39,7 +37,7 @@ struct node *list;
 
 你也许会想，我们能否向访问数组那样去访问链表中的元素？答案是否定的。对于链表，你仅知道表头在哪里，以及它与哪一个元素相连。如果你想要找到第k个元素，你只能从表头开始，沿着next指针寻找k个元素：
 
-```C
+```c
 ElemType ListAccess(int k) {
     struct node *now = list;
     int cnt = 0;
@@ -62,7 +60,7 @@ ElemType ListAccess(int k) {
 
 类似于访问第k个元素，只要我们能找到它，就能修改它的数据：
 
-```C
+```c
 void ListModify(int k, ElemType data) {
     struct node *now = list;
     int cnt = 0;
@@ -93,7 +91,7 @@ void ListModify(int k, ElemType data) {
 
 代码如下：
 
-```C
+```c
 void ListInsert(int k, ElemType data) {
     struct node *now = list;
 
@@ -123,7 +121,7 @@ void ListInsert(int k, ElemType data) {
 
 注意上述代码中，为了简化代码，我们使用NewSpace宏定义代替了调用malloc()函数的过程，这一宏定义如下：
 
-```C
+```c
 #define NewSpace (struct node *)malloc(sizeof(struct node))
 ```
 
@@ -131,7 +129,7 @@ void ListInsert(int k, ElemType data) {
 
 删除就是上述过程的逆过程：
 
-```C
+```c
 void ListRemove(int k) {
     struct node *now = list;
 

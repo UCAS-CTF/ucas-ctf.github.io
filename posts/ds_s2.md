@@ -1,7 +1,5 @@
 # 数据结构入门：栈
 
-Author: [doyo](https://github.com/doyo2024)
-
 ## 基本概念
 
 **栈（stack）**，又称堆栈（个人不建议采用这个称呼，因为另有一种名为堆的数据结构，很容易引起混淆），是一种特殊的线性表，其所有的插入和删除操作均限定在线性表的一端进行；允许进行这些操作的一端称为**栈顶（top）**，另一端则称之为**栈底（bottom）**。
@@ -18,7 +16,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 与单向链表类似，栈中的每个元素也有两个必要元素：被存放的数据和用来链接元素的指针：
 
-```C
+```c
 typedef int ElemType;
 struct node {
     ElemType data;
@@ -28,7 +26,7 @@ struct node {
 
 类似的，我们也需要一个栈顶指针来指向这个栈的栈顶：
 
-```C
+```c
 struct node * Stack;
 ```
 
@@ -36,7 +34,7 @@ struct node * Stack;
 
 返回这个链表表头的数据即可：
 
-```C
+```c
 bool ErrorFlag = true;  // 报错标记，true为存在错误
 
 ...                     // 此处省略若干代码
@@ -59,7 +57,7 @@ ElemType Top() {
 
 压栈的操作实际上就是在这个链表的表头添加一个元素：
 
-```C
+```c
 void Push(ElemType data) {
     ErrorFlag = false;                  // 清空报错标记，因为此时栈不再为空，因而也不会触发报错
     struct node * ptr = NewSpace;       // 新的元素
@@ -73,7 +71,7 @@ void Push(ElemType data) {
 
 弹栈的操作实际上就是从这个链表的表头删除一个元素：
 
-```C
+```c
 ElemType Pop() {
     if (Stack == NULL) {    // 检查栈顶是否为空
         printf("Error: The stack is empty!\n");

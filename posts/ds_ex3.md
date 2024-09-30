@@ -56,7 +56,7 @@ pop eax
 
 &emsp;&emsp;下面的代码给出了一个简单的、带函数调用的程序test.c:
 
-```C
+```c
 int x = 1, y = 3;
 
 int work(int a, int b) {
