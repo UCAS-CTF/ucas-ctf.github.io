@@ -1,4 +1,7 @@
 # 如何使用 shell
+
+Author: [凉凉](https://github.com/li-yiyang)
+
 本文将介绍关于如何使用 shell 以及对应相关的一堆工具链, 完成本文的阅读与学习,
 你将学会:
 + 基本的 shell 使用以及快捷键
@@ -97,7 +100,7 @@
   根据你的输出结果:
 
   <details>
-  <summary markdown=1>
+  <summary markdown="1">
   选择: `bash: xxx: command not found`
   </summary>
   <div markdown="1">
