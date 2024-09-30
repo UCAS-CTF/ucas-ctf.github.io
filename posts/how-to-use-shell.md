@@ -271,8 +271,8 @@ Author: [凉凉](https://github.com/li-yiyang)
   + `# ...` 注释, 在 `#` 后的会被 BASH 忽略
 
   <details>
-  <summary markdown=1>拓展: 在 `main` 函数中的参数处理</summary>
-  <div markdown=1>
+  <summary markdown="1">拓展: 在 `main` 函数中的参数处理</summary>
+  <div markdown="1">
   用一个 `main` 函数来理解估计会非常方便:
 
   ```c
