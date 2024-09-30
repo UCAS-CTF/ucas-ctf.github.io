@@ -1,5 +1,7 @@
 # 扩展：计算机的基本组成结构
 
+Author: [doyo](https://github.com/doyo2024)
+
 &emsp;&emsp;简单而言，现在通用计算机的结构可以概括为以下几个部分： 
 
 * **计算器**
