@@ -1,4 +1,7 @@
 # 在 macOS 上配置环境
+
+Author: [凉凉](https://github.com/li-yiyang)
+
 对于使用 macOS 的同学, 你可以参考 [macOS 上的坑和一些 tips](https://ucaskernel.com/d/775-macos-tips/) 这个 Kernel 的帖子来进行一些环境的配置.
 
 本文包含两个部分:
