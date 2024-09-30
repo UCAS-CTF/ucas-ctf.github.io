@@ -34,7 +34,7 @@
 
 #### 课堂笔记
 
-[2024.09.29 C基础第一次课笔记](https://ucas-ctf.github.io/posts/c_s1_notes)
+[2024.09.19 C基础第一次课笔记](https://ucas-ctf.github.io/posts/c_s1_notes)
 
 #### 补充资料
 
