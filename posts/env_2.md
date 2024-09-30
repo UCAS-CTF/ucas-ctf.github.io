@@ -1,5 +1,7 @@
 # 安装单系统/多系统Linux
 
+Author: [Crazy_13754](https://github.com/Crazy-13754)
+
 ## 说在前面
 
 本文是一篇个人向的配置教程，以帮助想配置 Linux 的同学搭建一个可以日常使用的、比较适合新手的 Linux 双系统环境（Ubuntu + kde + zsh）。
