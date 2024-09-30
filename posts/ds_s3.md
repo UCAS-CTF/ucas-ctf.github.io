@@ -1,7 +1,5 @@
 # 数据结构入门：队列
 
-Author: [doyo](https://github.com/doyo2024)
-
 ## 基本概念
 
 **队列（queue）** 是一种特殊的线性表，它仅允许在一端进行插入，在另一端进行删除。允许删除的这一端称为**队头** 或者**队首**，允许插入的那一端称为**队尾**。
@@ -18,7 +16,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 跟单向列表和栈都是一样的;
 
-```C
+```c
 typedef int ElemType;
 struct node {
     ElemType data;
@@ -28,7 +26,7 @@ struct node {
 
 稍微不一样的是队列需要两个指针，一个指向队首，一个指向队尾：
 
-```C
+```c
 struct node *QueueHead, *QueueTail;
 ```
 
@@ -36,7 +34,7 @@ struct node *QueueHead, *QueueTail;
 
 类似于访问栈顶元素：
 
-```C
+```c
 ElemType Front() {
     if (QueueHead == NULL) {
         printf("Error: The queue is empty!\n");
@@ -54,7 +52,7 @@ ElemType Front() {
 
 与栈不同的是，新元素入队时，是从队尾入队。
 
-```C
+```c
 void Push(ElemType data) {
     ErrorFlag = false;
     struct node * ptr = NewSpace;
@@ -73,7 +71,7 @@ void Push(ElemType data) {
 
 与弹栈的操作类似，但是是从队首进行：
 
-```C
+```c
 ElemType Pop() {
     if (QueueHead == NULL) {
         printf("Error: The queue is empty!\n");
