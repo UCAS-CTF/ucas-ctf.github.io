@@ -18,6 +18,8 @@
 
 [(刚开始写还没写完)如何安装单系统/多系统Linux](https://ucas-ctf.github.io/posts/env_2)
 
+[如何使用SHELL](https://ucas-ctf.github.io/posts/how-to-use-shell)
+
 #### Q&A
 
 [答疑——虚拟机及C语言环境配置相关问题的解答](https://ucas-ctf.github.io/posts/qa_1)
