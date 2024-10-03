@@ -516,7 +516,142 @@ int main(){
 一般地，在函数内声明的变量储存在栈 (stack) 上；刚刚提过的、手动分配的变量储存在堆 (heap) 上；
 一些常量，比如 `printf("hello");` 中的 `"hello"` 储存在程序文件内的 `.rodata` 段 (read-only data segment) 上；全局变量储存在程序文件的 `.bss` 段 (block started by symbol) 上。
 
-![进程的内存空间](https://img-blog.csdnimg.cn/img_convert/9e1c67c4a8d3f61041f74721935ebf0c.png)
+![进程的内存空间](https://ucas-ctf.github.io/posts/image/c_s3/c_s3_1.png)
+
+
+
+## gdb调试
+
+### gdb安装
+
+```bash
+sudo apt install gdb
+```
+
+推荐插件：`pwndbg` `gef` 等等
+
+https://blog.csdn.net/qq_51232724/article/details/124133459
+
+### 调试一个带有源码的c程序
+
+#### 编译程序
+
+```bash
+gcc -g hellogdb.c -o hellogdb
+```
+
+这里带 `-g` 参数是为了生成调试信息（如程序源码等），方便gdb调试。
+
+```c
+#include <stdio.h>
+
+int main(){
+    int a;
+    int b = 2;
+    int c[3] = {1,2,3};
+    for(int i=0; i<3; i++){
+        printf("%d ", c[i]);
+    }
+    printf("\nhello gdb\n");
+    return 0;
+}
+```
+
+
+#### 调试程序
+
+直接调试
+
+```bash
+gdb hellogdb
+```
+
+附加到进程调试
+
+```bash
+gdb hellogdb pid
+# 或者
+gdb -p pid
+# 或者
+gdb
+attach pid
+```
+
+pid是进程号
+
+获取进程号方法
+
+```bash
+ps -A
+# 或者
+top
+# 或者
+pidof hellogdb
+```
+
+
+#### 常用命令
+
+- `help` 显示帮助信息
+  - `help l` 显示 `l` 命令的帮助信息
+- `l` 显示代码
+  - `l 5` 显示当前文件第5行附近10行的代码
+  - `l 1,12` 显示当前文件第1行到第12行的代码
+- `r` 运行程序
+- `start` 在main函数下临时断点并运行程序
+- `b` 设置普通断点
+  - `b 10` 设置第10行的断点
+  - `b main` 设置 `main` 函数的断点
+- `watch var` 设置监视断点， 当变量 `var` 被修改时，程序会自动暂停
+  - `watch a` 设置监视变量 `a` 的值
+- `catch` 设置异常捕获点，当程序运行到该点时，会自动暂停
+  - `catch function` 设置捕获函数 `function` 发生时，程序会自动暂停
+- `info` 显示信息
+  - `info b` 显示所有断点信息
+- `d 断点号` 删除断点
+  - `d 1` 删除第1个断点
+- `n` 逐过程（不进入深一层的函数）
+- `s` 逐语句（进入深一层的函数）
+- `c` 继续运行程序直到下一个断点
+- `p` 打印变量的值
+  - `p a` 打印变量 `a` 的值
+  - `p *p` 打印指针 `p` 指向的地址的值
+- `x` 显示内存
+  - `x /20x  0x7fffffffd7fc` 以4个字节为单位，显示从 `0x7fffffffd7fc` 开始向地址增加方向的的20个单位的内容
+- `set var` 修改变量的值
+  - `set var a = 10` 修改变量 `a` 的值为10
+  - `set {int}0x7fffffffd7fc = 10` 将地址为 `0x7fffffffd7fc` 的变量以int类型的方式赋值为10
+- `display var` 显示变量的值
+- `watch var` 监视变量的值，每当变量的值发生变化时，程序会自动暂停
+- `undisplay` 取消监视变量的值
+- `finish` 运行到当前函数返回
+- `until` 运行到指定的行号
+- `bt` 显示函数调用栈
+- `q` 退出gdb调试
+
+其中我们基本要掌握的有
+
+1. `b` 设置断点
+2. `r` 运行程序
+3. `n` 逐过程
+4. `s` 逐语句
+5. `c` 继续运行程序
+6. `p` 打印变量的值
+7. `x` 显示内存
+8. `set var` 修改变量的值
+9. `display var` 显示变量的值
+10. `q` 退出gdb调试
+
+#### 更进一步
+
+- `disassemble` 查看汇编代码
+- `ni` 汇编指令的逐过程
+- `si` 汇编指令的逐语句
+- `!command` command是shell命令，可以在gdb内执行shell命令
+
+还有更多更详细的命令，可以自行搜索。
+
+
 
 ## 综合应用
 
@@ -564,11 +699,6 @@ int main(){
     return 0;
 }
 ```
-
-
-## gdb调试
-
-
 
 ## 补充
 
