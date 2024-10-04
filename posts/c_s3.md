@@ -76,6 +76,7 @@ int* p2;
 float* p3;
 void* p4; // 无类型指针
 struct student* p5;// 结构体指针
+char** p6; // 指向指针的指针，多重指针
 ```
 
 `void *` 类型指针比较常见，通常见于函数返回值，我们在使用这个指针时需要进行强制类型转换变为其他指针。
@@ -162,6 +163,7 @@ printf("%d\n", *(p+2)); // 输出 p 指向的数组的第三个元素
 
 
 
+
 #### 数组指针与指针数组
 
 注意：C语言中，优先级：`()` > `[]` > `*`
@@ -231,6 +233,42 @@ printf("%d\n", (*p)[3]); // 输出 p 指向的数组的第四列元素
 
 </details>
 
+##### 字符串
+
+字符串在内存中以字符数组的形式存储，以`\0`作为结尾，每个字符占用一个字节，可以写作如下形式：
+
+```c
+char s[]={'h', 'e', 'l', 'l', 'o', '\0'}
+```
+
+
+常量字符串，即在编译期间就确定了的字符串，在c语言中有两种写法，但并不等价。
+
+```c
+char s[]="hello world";
+char* p="hello world";
+```
+
+根据上面的知识，我们都知道 `s` 和 `p` 都指向字符串的首地址，但前面的字符串可以被修改，后面的不能。
+
+```c
+#include <stdio.h>
+
+int main(int argc, char const *argv[])
+{
+    char s[]="hello world";
+    char* p="hello world";
+    s[0]='a';
+    p[0]='a';
+    return 0;
+}
+```
+
+编译执行后会输出 `Segmentation fault` 错误，主要原因是两者的储存位置不同，`s` 储存在栈上，`p` 储存在只读常量区，所以前面的字符串可以被修改而后面的不能。（详细情况可参考下一节补充资料，先了解就好）
+
+变化的字符串与数组无太大差异，主要注意 `\0` 也是字符串长度的一部分，比如 `char s[10];` 事实上只能储存9个有效字符，若强行写入10个字符，可能会造成内存地址的泄露。
+
+
 ##### 指针数组
 
 意为一个由指针组成的数组。该数组里存储的是一些地址。
@@ -259,6 +297,20 @@ printf("%d\n",p[1][1]);
 printf("%d\n",p[2][0]);
 // 15
 ```
+
+另一个更为常见的例子即是字符串数组，即一个由字符串组成的数组。
+
+```c
+char* str[3] = {"hello", "world", "c"};
+printf("%s\n", str[0]);
+// hello
+printf("%s\n", str[1]);
+// world
+printf("%s\n", str[2]);
+// c
+```
+
+
 #### 总结
 
 1. 数组指针简单理解为“数组的指针”，首先这个变量是一个指针，其次，”数组”修饰这个指针，意思是说这个指针存放着一个数组的首地址，或者说这个指针指向一个数组的首地址。
@@ -353,7 +405,9 @@ Node* get_next(Node* p){
 
 指针作为参数传入函数，最主要的作用是实现在函数内实现外部变量的修改。
 
+#### 函数指针
 
+参考上边的选择阅读部分
 
 
 ## 结构体
@@ -518,7 +572,7 @@ int main(){
 
 ![进程的内存空间](https://ucas-ctf.github.io/posts/image/c_s3/c_s3_1.png)
 
-
+[图片源](https://img-blog.csdnimg.cn/img_convert/9e1c67c4a8d3f61041f74721935ebf0c.png)
 
 ## gdb调试
 
@@ -652,8 +706,15 @@ pidof hellogdb
 还有更多更详细的命令，可以自行搜索。
 
 
-
 ## 综合应用
+
+
+<details>
+
+<summary>详情在下一篇教程（数据结构相关），你要是想看也行</summary>
+
+<div markdown="1">
+
 
 结合本次课及之前的C语言基础知识，我们可以写出一些更为复杂的东西，比如一个简短版的学生管理系统。
 
@@ -700,6 +761,56 @@ int main(){
 }
 ```
 
+</div>
+
+</details>
+
 ## 补充
 
 关于 `main` 函数参数的简介
+
+```c
+void main(int argc, char* argv[], char* envp[]){
+    //...
+}
+```
+
+- `argc` 代表命令行参数的个数
+- `argv` 是一个指针数组，每个元素指向一个字符串，表示命令行参数
+- `envp` 是一个指针数组，每个元素指向一个字符串，表示环境变量
+
+例子
+
+```c
+#include <stdio.h>
+
+int main(int argc, char* argv[], char* envp[]){
+    printf("argc: %d\n", argc);
+    for(int i=0; i<argc; i++){
+        printf("argv[%d]: %s\n", i, argv[i]);
+    }
+    printf("envp[0]: %s\n", envp[0]);
+    return 0;
+}
+```
+
+上述程序打印了命令行参数的个数和对应的参数，以及第一个环境变量的值。
+
+```bash
+> gcc main_argvs.c -o main_argvs
+> ./main_argvs 1 2 1+2+3 "a string" not a string
+argc: 8
+argv[0]: ./main_argvs
+argv[1]: 1
+argv[2]: 2
+argv[3]: 1+2+3
+argv[4]: a string
+argv[5]: not
+argv[6]: a
+argv[7]: string
+envp[0]: SHELL=/bin/bash
+```
+
+
+
+
