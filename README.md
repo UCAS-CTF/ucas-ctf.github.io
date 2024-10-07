@@ -68,4 +68,8 @@
 
 #### 补充资料
 
+[双向链表](https://ucas-ctf.github.io/posts/ds_ex1)
+
+[用数组实现栈和队列](https://ucas-ctf.github.io/posts/ds_ex2)
+
 [计算机中的程序运行时栈](https://ucas-ctf.github.io/posts/ds_ex3)
