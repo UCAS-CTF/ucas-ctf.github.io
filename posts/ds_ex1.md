@@ -2,7 +2,7 @@
 
 Author: [doyo](https://github.com/doyo2024)
 
-&emsp;&emsp;完整代码详见[此处](https://ucas-ctf.github.io/posts/code/ds_ex1/doubly_linked_list.c)。
+&emsp;&emsp;完整代码详见[此处](https://ucas-ctf.github.io/posts/code/ds_ex1/doubly_linked_list.c)。<a href="https://ucas-ctf.github.io/posts/code/ds_ex1/doubly_linked_list.c" download="doubly_linked_list.c">点击下载</a>
 
 &emsp;&emsp;双向链表与单向链表类似，仅仅是多了一个指向前一个元素的前驱指针：
 
