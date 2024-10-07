@@ -54,7 +54,7 @@ pop eax
 
 &emsp;&emsp;我们来研究一个实例。
 
-&emsp;&emsp;下面的代码给出了一个简单的、带函数调用的程序test.c:
+&emsp;&emsp;下面的代码给出了一个简单的、带函数调用的程序[test.c](https://ucas-ctf.github.io/posts/code/ds_ex3/test.c):
 
 ```c
 int x = 1, y = 3;
@@ -71,7 +71,7 @@ int main() {
 }
 ```
 
-&emsp;&emsp;用如下指令编译可以得到汇编程序：
+&emsp;&emsp;用如下指令编译可以得到汇编程序(完整汇编程序详见[此处](https://ucas-ctf.github.io/posts/code/ds_ex3/test.S))：
 
 ```shell
 gcc test.c -m32 -S -o test.S
