@@ -68,15 +68,17 @@ scanf("%c", &ch); // 输入一个字符
 
 ### 声明一个指针变量
 
-声明一个指针变量，需要在类型名后面加上 `*`
+声明一个指针变量，需要在变量名前面加上 `*`
 
 ```c
-char* p1;
-int* p2;
-float* p3;
-void* p4; // 无类型指针
-struct student* p5;// 结构体指针
-char** p6; // 指向指针的指针，多重指针
+char *p1;
+int *p2;
+float *p3;
+void *p4; // 无类型指针
+struct student *p5;// 结构体指针
+char **p6; // 指向指针的指针，多重指针
+char* p7; // 这样也可以
+char *p8,*p9; // 多重声明
 ```
 
 `void *` 类型指针比较常见，通常见于函数返回值，我们在使用这个指针时需要进行强制类型转换变为其他指针。
@@ -85,7 +87,7 @@ char** p6; // 指向指针的指针，多重指针
 
 
 ```c
-int* p = NULL; // 声明一个指针变量 p
+int *p = NULL; // 声明一个指针变量 p
 // 或者int *p;
 int a = 10;
 p=&a; // 将 a 的地址赋值给 p
@@ -96,7 +98,7 @@ printf("p points to %d\n", *p); // 输出 p 指向的内存地址的值
 **注意** ：下面这个例子是错误的。
 
 ```c
-int* p;
+int *p;
 *p=10; // 错误，不能对未初始化的指针指向的地址赋值
 ```
 
@@ -155,9 +157,9 @@ int main(){
 
 ```c
 int arr[] = {1, 2, 3, 4, 5};
-int* p = arr; // 声明一个指针变量 p 指向数组 arr
-printf("%d\n", *(p+2)); // 输出 p 指向的数组的第三个元素
-// 3
+int *p = arr; // 声明一个指针变量 p 指向数组 arr
+char *cp = arr;
+printf("%p,%p,%p,%p,%d\n",p,p+1,cp,cp+1,*(p+2)); // 输出 p 指向的数组的第三个元素
 ```
 指针的类型不同，其 `+1` 的偏移字符数也不同，通常偏移一个类型的大小。
 
@@ -361,10 +363,31 @@ typedef struct node{
 如何写一个函数，交换两参数的值？（前置：变量的作用域）
 
 ```c
-void swap(int* a, int* b){
+#include <stdio.h>
+
+void swap_test(int a, int b){
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+
+void swap(int *a, int *b){
     int temp = *a;
     *a = *b;
     *b = temp;
+}
+
+int main(){
+    int x = 10;
+    int y = 20;
+    printf("before: %d %d\n", x, y);
+    swap_test(x, y);
+    printf("after: %d %d\n", x, y);
+    printf("before: %d %d\n", x, y);
+    swap(&x, &y);
+    printf("after: %d %d\n", x, y);
+    return 0;
 }
 ```
 
@@ -392,11 +415,11 @@ int main(){
 结构体也通常以指针的形式传入函数中，或作为函数的返回值
 
 ```c
-int get_age(struct person* p){
+int get_age(struct person *p){
     return p->age;
 }
 
-Node* get_next(Node* p){
+Node *get_next(Node* p){
     return p->next;
 }
 ```
@@ -535,10 +558,10 @@ typedef bool int;// c99以前c语言中没有bool类型，用int代替
 函数原型：
 
 ```c
-void* malloc(size_t size); // 分配指定大小的内存块，返回指向该内存块的指针
-void* calloc(size_t nmemb, size_t size); // 分配指定数量和大小的内存块，并初始化为0
-void* realloc(void* ptr, size_t size); // 重新分配内存块，返回指向新内存块的指针
-void free(void* ptr); // 释放内存块
+void *malloc(size_t size); // 分配指定大小的内存块，返回指向该内存块的指针
+void *calloc(size_t nmemb, size_t size); // 分配指定数量和大小的内存块，并初始化为0
+void *realloc(void *ptr, size_t size); // 重新分配内存块，返回指向新内存块的指针
+void free(void *ptr); // 释放内存块
 ```
 
 例子：
@@ -568,7 +591,7 @@ int main(){
 这里主要介绍几个名词（以linux的elf可执行文件为例），感兴趣的同学可以先自行查找，具体内容后面会讲。
 
 一般地，在函数内声明的变量储存在栈 (stack) 上；刚刚提过的、手动分配的变量储存在堆 (heap) 上；
-一些常量，比如 `printf("hello");` 中的 `"hello"` 储存在程序文件内的 `.rodata` 段 (read-only data segment) 上；全局变量储存在程序文件的 `.bss` 段 (block started by symbol) 上。
+一些常量，比如 `printf("hello");` 中的 `"hello"` 储存在程序文件内的 `.rodata` 段 (read-only data segment) 上；未初始化全局变量储存在程序文件的 `.bss` 段 (block started by symbol) 上等等。
 
 ![进程的内存空间](https://ucas-ctf.github.io/posts/image/c_s3/c_s3_1.png)
 
@@ -599,9 +622,17 @@ gcc -g hellogdb.c -o hellogdb
 ```c
 #include <stdio.h>
 
+void swap(int* a, int* b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int main(){
-    int a;
+    int a = 1;
     int b = 2;
+    swap(&a, &b);
+    getchar();
     int c[3] = {1,2,3};
     for(int i=0; i<3; i++){
         printf("%d ", c[i]);
