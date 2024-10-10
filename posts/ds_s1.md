@@ -15,7 +15,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 &emsp;&emsp;顾名思义，**链表**就是用指针将元素链接起来，这是实现线性表的一种常见方式。
 
-&emsp;&emsp;完整代码详见[此处](https://ucas-ctf.github.io/posts/code/ds_s1/list.c)。
+&emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/code/ds_s1/list.c" download="list.c">此处（点击下载）</a>。
 
 ### 链表的必要成员
 
