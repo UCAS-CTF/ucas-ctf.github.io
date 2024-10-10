@@ -6,7 +6,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 ## 用数组实现栈
 
-&emsp;&emsp;完整代码详见[此处](https://ucas-ctf.github.io/posts/code/ds_ex2/array_stack.c)。
+&emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/code/ds_ex2/array_stack.c" download="array_stack.c">此处（点击下载）</a>。
 
 ### 栈的必要元素
 
@@ -73,7 +73,7 @@ ElemType Pop() {
 
 ## 用数组实现队列
 
-&emsp;&emsp;完整代码详见[此处](https://ucas-ctf.github.io/posts/code/ds_ex2/array_queue.c)。
+&emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/code/ds_ex2/array_queue.c" download="array_queue.c">此处（点击下载）</a>。
 
 ### 队列的必要元素
 
