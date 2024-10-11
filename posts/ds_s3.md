@@ -14,7 +14,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 下面基于[上上份讲义](https://ucas-ctf.github.io/posts/ds_s1)中的单向链表给出栈的一种实现。正如前文所述，队列实际上也是一种特殊的线性表，所以只需要对单向列表的实现略作修改，使其插入仅在其一端、删除在另一端进行即可。
 
-&emsp;&emsp;完整代码详见[此处](https://ucas-ctf.github.io/posts/code/ds_s3/queue.c)。
+&emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/code/ds_s3/queue.c" download="queue.c">此处（点击下载）</a>。
 
 ### 队列的必要元素
 
