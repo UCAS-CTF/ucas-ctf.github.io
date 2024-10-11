@@ -4,7 +4,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 ## 线性表
 
-&emsp;&emsp;**线性表（linked list）** 是最基础最简单的数据结构，它就是线性排布的一串数据。在这串数据的任何一个位置，都可以执行下列操作中的任何一个：
+&emsp;&emsp;**线性表（list）** 是最基础最简单的数据结构，它就是线性排布的一串数据。在这串数据的任何一个位置，都可以执行下列操作中的任何一个：
 
 * 访问这个数据（读取它的值）
 * 修改这个数据
@@ -13,7 +13,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 ## 用链表实现线性表
 
-&emsp;&emsp;顾名思义，**链表**就是用指针将元素链接起来，这是实现线性表的一种常见方式。
+&emsp;&emsp;顾名思义，**链表（linked list）** 就是用指针将元素链接起来，这是实现线性表的一种常见方式。
 
 &emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/code/ds_s1/list.c" download="list.c">此处（点击下载）</a>。
 
