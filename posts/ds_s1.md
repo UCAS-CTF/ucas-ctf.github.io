@@ -13,7 +13,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 ## 用链表实现线性表
 
-&emsp;&emsp;顾名思义，**链表（linked list）** 就是用指针将元素链接起来，这是实现线性表的一种常见方式。
+&emsp;&emsp;顾名思义，**链表（linked list）**就是用指针将元素链接起来，这是实现线性表的一种常见方式。
 
 &emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/code/ds_s1/list.c" download="list.c">此处（点击下载）</a>。
 
@@ -138,6 +138,7 @@ void ListRemove(int k) {
         struct node *ptr = now->next;
         if (ptr == NULL) {
         	printf("Sorry, there are only %d elements in the list.\n", k - 1);
+            return；
 		}
         now->next = ptr->next;              // 前一个元素现在的后继变成要删除元素的后继
         free(ptr);
