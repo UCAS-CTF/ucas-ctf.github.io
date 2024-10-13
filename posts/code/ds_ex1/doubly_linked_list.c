@@ -112,6 +112,7 @@ void ListRemove(int k) {
         struct node *ptr = now->next;
         if (ptr == NULL) {
         	printf("Sorry, there are only %d elements in the list.\n", k - 1);
+            return;
 		}
         now->next = ptr->next;
         if (ptr->next != NULL)
