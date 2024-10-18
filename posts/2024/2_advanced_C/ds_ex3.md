@@ -22,7 +22,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 &emsp;&emsp;在x86架构中，一个程序所使用的内存区域大致被划分为以下几个部分：
 
-![img1](image/ds_ex3/memory.png)
+![img1](/posts/2024/image/ds_ex3/memory.png)
 
 注意，x86架构中，比较反直觉的是，栈一般是从高地址向低地址增长的，也是说，栈顶在低地址而栈底在高地址。
 

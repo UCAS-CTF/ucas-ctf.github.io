@@ -593,7 +593,7 @@ int main(){
 一般地，在函数内声明的变量储存在栈 (stack) 上；刚刚提过的、手动分配的变量储存在堆 (heap) 上；
 一些常量，比如 `printf("hello");` 中的 `"hello"` 储存在程序文件内的 `.rodata` 段 (read-only data segment) 上；未初始化全局变量储存在程序文件的 `.bss` 段 (block started by symbol) 上等等。
 
-![进程的内存空间](https://ucas-ctf.github.io/posts/image/c_s3/c_s3_1.png)
+![进程的内存空间](/posts/2024/image/c_s3/c_s3_1.png)
 
 [图片源](https://img-blog.csdnimg.cn/img_convert/9e1c67c4a8d3f61041f74721935ebf0c.png)
 

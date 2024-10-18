@@ -9,7 +9,7 @@ Author: [凉凉](https://github.com/li-yiyang)
 + [虚拟机的配置](#虚拟机的配置)
 
 ## Homebrew 配置
-![](./image/setup-env-on-macOS/setup-homebrew.svg)
+![](/posts/2024/image/setup-env-on-macOS/setup-homebrew.svg)
 
 你需要一个 macOS 上的包管理器 [^1], 这里建议使用 [Homebrew](https://brew.sh) 来作为包管理器.
 
@@ -61,7 +61,7 @@ xcode-select --install
 + 更多请自行阅读 `man brew` 或者 `brew help`.
 
 ## 虚拟机的配置
-![](./image/setup-env-on-macOS/setup-vm.svg)
+![](/posts/2024/image/setup-env-on-macOS/setup-vm.svg)
 
 ### UTM 方案
 1. 从 [官网](https://mac.getutm.app) 下载 `.dmg` 镜像包 ([下载链接](https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg)), 双击打开 (挂载), 将 `UTM.app` 移动到 `Application` (应用程序) 文件夹中;

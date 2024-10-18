@@ -13,7 +13,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 &emsp;&emsp;一台计算机的基本组成如下图所示：
 
-![img](image/ca/ca1.png)
+![img](/posts/2024/image/ca/ca1.png)
 
 ## CPU
 

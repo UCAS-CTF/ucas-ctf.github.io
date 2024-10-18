@@ -37,7 +37,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 **第一种方法：** 在左侧边栏寻找一个叫terminal（这就是终端的英文）的应用，如果左侧边栏没有，点击左下角九个点的图标，在All里面寻找，就像下面这样：
 
-![图片](image/q&a_1/terminal1.png)
+![图片](/posts/2024/image/q&a_1/terminal1.png)
 
 这种方法打开的终端位于根目录下（~）。
 
