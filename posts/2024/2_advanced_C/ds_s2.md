@@ -14,7 +14,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 下面基于[上一份讲义](https://ucas-ctf.github.io/posts/ds_s1)中的单向链表给出栈的一种实现。正如前文所述，栈实际上是一种特殊的线性表，所以只需要对单向列表的实现略作修改，使其插入、删除操作仅在其一端进行即可。
 
-&emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/code/ds_s2/stack.c" download="stack.c">此处（点击下载）</a>。
+&emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/2024/2_advanced_C/code/ds_s2/stack.c" download="stack.c">此处（点击下载）</a>。
 
 ### 栈的必要元素
 
