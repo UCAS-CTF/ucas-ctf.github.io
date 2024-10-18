@@ -45,7 +45,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 例如，在下面这棵二叉树中，包含了除空二叉树以外的其它五种形态，你能发现吗？
 
-![img1](/posts/image/ds_ex3/tree.png)
+![img1](image/ds_s4/tree.png)
 
 ### 二叉树的性质
 
