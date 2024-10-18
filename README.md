@@ -73,3 +73,9 @@
 [用数组实现栈和队列](https://ucas-ctf.github.io/posts/ds_ex2)
 
 [计算机中的程序运行时栈](https://ucas-ctf.github.io/posts/ds_ex3)
+
+### 第五次课
+
+#### 讲义
+
+[C语言进阶——树](https://ucas-ctf.github.io/posts/ds_s4)
