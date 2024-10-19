@@ -1,3 +1,7 @@
+---
+math:true
+---
+
 # 数据结构入门：树
 
 Author: [doyo](https://github.com/doyo2024)
