@@ -13,10 +13,10 @@ digraph {
   node [shape=rect];
   install_clt   [label   = "安装 CLT, 在终端中执行\n xcode-select --install",
 		 tooltip = "该命令需要一定的网络连接",
-		 href    = "https://ucas-ctf.github.io/posts/setup-env-on-macOS#安装-clt-command-line-tools-for-xcode-命令行工具"];
+		 href    = "https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/setup-env-on-macOS#安装-clt-command-line-tools-for-xcode-命令行工具"];
   install_brew  [label   = "安装 Hombrew, 在终端中执行\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"",
 		 tooltip = "具体安装可以参考 brew.sh 网站上的命令\n想要用国内镜像源的话请参考正文中的清华源的配置",
-		 href    = "https://ucas-ctf.github.io/posts/setup-env-on-macOS#安装-homebrew"];
+		 href    = "https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/setup-env-on-macOS#安装-homebrew"];
   brew_tsh      [label   = "配置清华源, 在终端中执行\nexport HOMEBREW_BREW_GIT_REMOTE=\"https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git\"\nexport HOMEBREW_CORE_GIT_REMOTE=\"https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git\"\nexport HOMEBREW_INSTALL_FROM_API=1",
 		 tooltip = "建议写到 ~/.zshrc 或者是 ~/.bashrc 中",
 		 href    = "https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/"];

@@ -11,7 +11,7 @@ Author: [jiuhao47](https://github.com/jiuhao47)
 
 ## 环境安装
 
-> 此篇教程合集为Windows + VMware WorkStation + Ubuntu 22.04 + VScode(SSH)，[Mac请移步另一篇教程](https://ucas-ctf.github.io/posts/setup-env-on-macOS)
+> 此篇教程合集为Windows + VMware WorkStation + Ubuntu 22.04 + VScode(SSH)，[Mac请移步另一篇教程](https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/setup-env-on-macOS)
 
 ### Ubuntu 22.04 + VMware WorkStation 17 Pro
 

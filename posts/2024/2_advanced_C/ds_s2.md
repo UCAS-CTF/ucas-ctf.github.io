@@ -12,7 +12,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 ## 栈的基本实现
 
-下面基于[上一份讲义](https://ucas-ctf.github.io/posts/ds_s1)中的单向链表给出栈的一种实现。正如前文所述，栈实际上是一种特殊的线性表，所以只需要对单向列表的实现略作修改，使其插入、删除操作仅在其一端进行即可。
+下面基于[上一份讲义](https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_s1)中的单向链表给出栈的一种实现。正如前文所述，栈实际上是一种特殊的线性表，所以只需要对单向列表的实现略作修改，使其插入、删除操作仅在其一端进行即可。
 
 &emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/2024/2_advanced_C/code/ds_s2/stack.c" download="stack.c">此处（点击下载）</a>。
 
@@ -93,7 +93,7 @@ ElemType Pop() {
 
 ## 扩展：用数组实现栈
 
-如果你（曾经）是OIer，那你或许更熟悉栈的另外一种实现方式：[用数组实现](https://ucas-ctf.github.io/posts/ds_ex2)。这种方式的确会更简单一点，但丧失了一些灵活性。
+如果你（曾经）是OIer，那你或许更熟悉栈的另外一种实现方式：[用数组实现](https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_ex2)。这种方式的确会更简单一点，但丧失了一些灵活性。
 
 ## 扩展：计算机中的栈
 
@@ -103,4 +103,4 @@ ElemType Pop() {
 2. 函数执行结束时，计算机怎么知道该回到哪里继续执行呢？
 3. 局部变量保存在哪里？计算机怎么确保它只在代码的局部有效？
 
-[这篇讲义](https://ucas-ctf.github.io/posts/ds_ex3)会告诉你答案。
+[这篇讲义](https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_ex3)会告诉你答案。

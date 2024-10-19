@@ -8,16 +8,3 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
   parse_block_html: false
-
-math:
-  katex:
-    css: 'css/math/katex.min.css'
-    options:
-      throwOnError: false
-  mathjax:
-    css: 'css/math/style.css'
-    options:
-      conversion:
-        display: false
-      tex:
-      svg:

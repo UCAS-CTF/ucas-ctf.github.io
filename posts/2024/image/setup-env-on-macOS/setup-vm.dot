@@ -30,7 +30,7 @@ digraph {
 
   qemu        [label   = "QEMU",
 	       tooltip = "不建议新手使用",
-	       url     = "https://ucas-ctf.github.io/posts/setup-env-on-macOS#qemu-方案"];
+	       url     = "https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/setup-env-on-macOS#qemu-方案"];
 
   select         -> utm             [label="方案 1"];
   select         -> vmware          [label="方案 2"];

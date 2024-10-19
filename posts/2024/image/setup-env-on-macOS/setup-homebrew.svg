@@ -52,7 +52,7 @@
 <!-- install_clt -->
 <g id="node4" class="node">
 <title>install_clt</title>
-<g id="a_node4"><a xlink:href="https://ucas-ctf.github.io/posts/setup-env-on-macOS#安装-clt-command-line-tools-for-xcode-命令行工具" xlink:title="该命令需要一定的网络连接">
+<g id="a_node4"><a xlink:href="https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/setup-env-on-macOS#安装-clt-command-line-tools-for-xcode-命令行工具" xlink:title="该命令需要一定的网络连接">
 <polygon fill="none" stroke="black" points="482.25,-350.25 317,-350.25 317,-306.25 482.25,-306.25 482.25,-350.25"/>
 <text text-anchor="middle" x="399.62" y="-332.95" font-family="Arial" font-size="14.00">安装 CLT, 在终端中执行</text>
 <text text-anchor="middle" x="399.62" y="-312.7" font-family="Arial" font-size="14.00"> xcode&#45;select &#45;&#45;install</text>
@@ -69,7 +69,7 @@
 <!-- install_brew -->
 <g id="node5" class="node">
 <title>install_brew</title>
-<g id="a_node5"><a xlink:href="https://ucas-ctf.github.io/posts/setup-env-on-macOS#安装-homebrew" xlink:title="具体安装可以参考 brew.sh 网站上的命令&#10;想要用国内镜像源的话请参考正文中的清华源的配置">
+<g id="a_node5"><a xlink:href="https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/setup-env-on-macOS#安装-homebrew" xlink:title="具体安装可以参考 brew.sh 网站上的命令&#10;想要用国内镜像源的话请参考正文中的清华源的配置">
 <polygon fill="none" stroke="black" points="585.25,-44 0,-44 0,0 585.25,0 585.25,-44"/>
 <text text-anchor="middle" x="292.62" y="-26.7" font-family="Arial" font-size="14.00">安装 Hombrew, 在终端中执行</text>
 <text text-anchor="middle" x="292.62" y="-6.45" font-family="Arial" font-size="14.00">/bin/bash &#45;c &quot;$(curl &#45;fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</text>
