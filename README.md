@@ -10,7 +10,6 @@
 
 <details>
 <summary>点击展开</summary>
-<br>
 <div markdown="1">
 
 #### 讲义
@@ -36,7 +35,6 @@
 
 <details>
 <summary>点击展开</summary>
-<br>
 <div markdown="1">
 
 #### 讲义
@@ -62,7 +60,6 @@
 
 <details>
 <summary>点击展开</summary>
-<br>
 <div markdown="1">
 
 #### 讲义
@@ -78,7 +75,6 @@
 
 <details>
 <summary>点击展开</summary>
-<br>
 <div markdown="1">
 
 #### 讲义
@@ -92,7 +88,6 @@
 
 <details>
 <summary>点击展开</summary>
-<br>
 <div markdown="1">
 
 #### 讲义
@@ -118,7 +113,6 @@
 
 <details>
 <summary>点击展开</summary>
-<br>
 <div markdown="1">
 
 #### 讲义
