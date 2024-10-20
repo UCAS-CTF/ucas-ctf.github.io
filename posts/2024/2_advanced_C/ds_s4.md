@@ -69,7 +69,7 @@ Author: [doyo](https://github.com/doyo2024)
 
 ### 几种特殊的二叉树
 
-* **满二叉树（Perfect Binary Tree）：** 深度为 $k（k >= 1）$ 、具有 $2^k-1$ 个结点的二叉树。
+* **满二叉树（Perfect Binary Tree）：** 深度为 $k（k \geqslant 1）$ 、具有 $2^k-1$ 个结点的二叉树。
 * **完全二叉树（Complete Binary Tree）：** 从根结点到倒数第二层满足满二叉树的条件，最后一层可以不完全填充，但叶结点都靠左对齐。具有n个结点的完全二叉树深度为 $\lfloor \log_2n \rfloor$ .
 * **严二叉树（Full/Proper/Strictly Binary Tree）：** 所有非叶结点度均为 $2$。
 
