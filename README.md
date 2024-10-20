@@ -6,7 +6,12 @@
 > 
 > 目前仅更新了部分题目，测评系统和更多习题敬请期待！
 
-### 第零次课
+### 第零次课————虚拟机的安装
+
+<details>
+<summary>点击展开</summary>
+<br>
+<div markdown="1">
 
 #### 讲义
 
@@ -24,7 +29,15 @@
 
 [答疑——虚拟机及C语言环境配置相关问题的解答](https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/qa_1)
 
-### 第一次课
+</div>
+</details>
+
+### 第一次课————C语言基本语法与数据类型
+
+<details>
+<summary>点击展开</summary>
+<br>
+<div markdown="1">
 
 #### 讲义
 
@@ -42,7 +55,15 @@
 
 [C基础——Makefile与Cmake](https://ucas-ctf.github.io/posts/2024/1_basic_C/make)
 
-### 第二次课
+</div>
+</details>
+
+### 第二次课————C语言循环结构、函数、数组；递归与计算机抽象
+
+<details>
+<summary>点击展开</summary>
+<br>
+<div markdown="1">
 
 #### 讲义
 
@@ -50,13 +71,29 @@
 
 #### 补充资料
 
-### 第三次课
+</div>
+</details>
+
+### 第三次课————C语言指针、内存管理与gdb调试
+
+<details>
+<summary>点击展开</summary>
+<br>
+<div markdown="1">
 
 #### 讲义
 
 [C基础——指针、内存管理、gdb调试](https://ucas-ctf.github.io/posts/2024/1_basic_C/c_s3)
 
-### 第四次课
+</div>
+</details>
+
+### 第四次课————基于C语言的数据结构：线性表、链表、栈与队列
+
+<details>
+<summary>点击展开</summary>
+<br>
+<div markdown="1">
 
 #### 讲义
 
@@ -74,8 +111,19 @@
 
 [计算机中的程序运行时栈](https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_ex3)
 
-### 第五次课
+</div>
+</details>
+
+### 第五次课————基于C语言的数据结构：树
+
+<details>
+<summary>点击展开</summary>
+<br>
+<div markdown="1">
 
 #### 讲义
 
 [C语言进阶——树](https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_s4)
+
+</div>
+</details>
