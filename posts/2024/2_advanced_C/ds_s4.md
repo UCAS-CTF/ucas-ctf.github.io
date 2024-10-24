@@ -196,4 +196,35 @@ void postorder(struct node *now) {
 
 ### 代码示例
 
-你可以在我们的wiki中下载[tree.c（点击此处下载）](/posts/2024/2_advanced_C/code/ds_s4/tree.c)
+你可以在我们的wiki中下载[tree.c（点击此处下载）](/posts/2024/2_advanced_C/code/ds_s4/tree.c)，该程序接受一棵二叉树的输入，将其构建之后输出三种遍历的顺序。
+
+接收的输入格式为：
+
+第一行一个整数n，表示二叉树中结点的个数。
+
+接下来n行，每行两个整数，分别表示第i个结点的左右子结点id，0表示不存在。
+
+例如，你可以用下列输入来表示前文图中的那棵二叉树：
+
+```
+8
+2 3
+4 0
+5 6
+0 7
+0 0
+8 0
+0 0
+0 0
+```
+
+它对应的输出将是：
+
+```
+Preorder Traversal:
+1 2 4 7 3 5 6 8
+Inorder Traversal:
+4 7 2 1 5 3 8 6
+Postorder Traversal:
+7 4 2 5 8 6 3 1
+```
