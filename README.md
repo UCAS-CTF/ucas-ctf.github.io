@@ -121,3 +121,16 @@
 
 </div>
 </details>
+
+### 第六次课————c风格字符串
+
+<details>
+<summary>点击展开</summary>
+<div markdown="1">
+
+#### 讲义
+
+[C语言进阶——C风格字符串](https://ucas-ctf.github.io/posts/2024/2_advanced_C/string)
+
+</div>
+</details>
