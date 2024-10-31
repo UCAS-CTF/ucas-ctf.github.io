@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void read(char *str) {                          // 将字符串读入到从str开始的一段内存中
+void myRead(char *str) {                        // 将字符串读入到从str开始的一段内存中
     int i = 0;
     char c;     
     while ((c = getchar()) != '\n') {           // 检查读入的字符是否等于约定的字符串结尾字符，这里是'\n'
@@ -18,9 +18,9 @@ void read(char *str) {                          // 将字符串读入到从str�
 int main() {
     char str1[100], str2[100];
     puts("Please input the first string:");
-    read(str1);
+    myRead(str1);
     puts("Please input the second string:");
-    read(str2);
+    myRead(str2);
     int ret = strcmp(str1, str2);
     if (ret < 0)
         puts("Compare Result: str1 < str2");

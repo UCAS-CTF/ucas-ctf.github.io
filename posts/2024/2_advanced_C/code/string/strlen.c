@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void read(char *str) {                          // 将字符串读入到从str开始的一段内存中
+void myRead(char *str) {                        // 将字符串读入到从str开始的一段内存中
     int i = 0;
     char c;     
     while ((c = getchar()) != '\n') {           // 检查读入的字符是否等于约定的字符串结尾字符，这里是'\n'
@@ -18,7 +18,7 @@ void read(char *str) {                          // 将字符串读入到从str�
 int main() {
     char str[100];
     puts("Please input a string:");
-    read(str);
+    myRead(str);
     int len = strlen(str);
     printf("The length of str is: %d\n", len);
     return 0;
