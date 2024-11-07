@@ -3,7 +3,7 @@
 ## 2024秋
 
 > [**UCAS本科CTF编程练习平台**](https://ucas-ctf.github.io/Coding)
-> 
+>
 > 目前仅更新了部分题目，测评系统和更多习题敬请期待！
 
 ### 第零次课————虚拟机的安装
@@ -131,6 +131,22 @@
 #### 讲义
 
 [C语言进阶——C风格字符串](https://ucas-ctf.github.io/posts/2024/2_advanced_C/string)
+
+</div>
+</details>
+
+### 第七次课 ———— Python 入门
+
+<details>
+<summary>点击展开</summary>
+<div markdown="1">
+
+#### 讲义
+
+[Basic Python Introduction](https://ucas-ctf.github.io/posts/2024/3_basic_Python/trivial-python-introduction)
+
+[Learn Some Python with Retro Computer Battle Games](https://ucas-ctf.github.io/posts/2024/3_basic_Python/learn-some-python-with-retro-computer-battle-games)
+
 
 </div>
 </details>
