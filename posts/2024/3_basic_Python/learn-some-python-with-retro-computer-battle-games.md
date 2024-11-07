@@ -25,6 +25,7 @@ BASIC 语言, 而非 Python). 不过你可以将其作为课外消遣读物,
 + [Robot Missile](#robot-missile)
 + [The Vital Message](the-vital-message)
 + [Shootout](shootout)
++ [Iceberg](iceberg)
 
 ## Robot Missile
 > The year is 2582 and the people of Earth are in the midst of battle
@@ -193,4 +194,99 @@ BASIC 代码 (其实不管是什么代码都行), 然后我们需要将其变成
 我们可以考虑用这个 BASIC 来作为一个简单虚拟机的练习.
 
 ## Iceberg
-> 
+> Your hull is badly damaged and you've no weapons to speak of.
+> As you limp slowly home through treacherous iceberg-strewn waters,
+> you become aware that an enemy ship is tailing you. Strangely it can
+> detect you but not the icebergs, so your best chance is to lure it
+> into hitting one.
+>
+> Your computer will print a grid showing the position of your ship
+> (🚢), the enemy (😈) and the icebergs (🏔️). You can move one space North,
+> South, East or West each go. The enemy moves towards you by the most
+> direct route (it can move diagonally too). If you move into any of the
+> 8 positions surrounding the enemy, you will be captured, and if you hit
+> an iceberg you will sink.
+>
+> Can you escape?
+
+是时候该从这些过于朴实无华的终端文本界面升级一下了,
+我们将会演示如何下载并调用一个 TUI 的图形库: `curses`.
+
+
+
+我们最终的目标是做一个能够显示如下效果的小游戏:
+
+```text
+```
+
+### PIP, the python package manager
+这里默认大家使用的是 Windows 作为自己的编程环境, 假如是 Unix-like 的环境,
+那么大家可以只是看看这里的操作而不必真的执行下面的命令:
+
+1. 打开命令提示符或者任意包含 conda / Python 的环境
+2. 输入 `pip` 命令:
+
+```shell
+pip install windows-curses
+```
+
+这里, 我们使用 `pip install` 命令来下载一个叫作 `windows-curses` 的库.
+
+类似的, 你完全可以下载其他任何的库, 比如 `numpy`, `scipy` 等等.
+
+### 那么, 如何使用 `curses` 库呢?
+首先, 相信大家的第一个想法就是跑到万能的互联网上搜索 `curses 教程`
+关键词来找到或是 CSDN 或是 b 站视频或是别的什么的网站来找一个教程.
+
+但是, 其实还有一个非常好用的文档/教程来源: 那就是官方的文档: [curses](https://docs.python.org/3/howto/curses.html).
+让我们来看看下面的这段代码:
+
+```python
+# from https://docs.python.org/3/howto/curses.html#starting-and-ending-a-curses-application
+from curses import wrapper
+
+def main(stdscr):
+    # Clear screen
+    stdscr.clear()
+
+    # This raises ZeroDivisionError when i == 10.
+    for i in range(0, 11):
+        v = i-10
+        stdscr.addstr(i, 0, '10 divided by {} is {}'.format(v, 10/v))
+
+    stdscr.refresh()
+    stdscr.getkey()
+
+wrapper(main)
+```
+
+将这段代码保存到一个 Python 文件中: [curses-example.py](./src/computer-battle-game/curses-example.py),
+然后在终端中运行 `python curses-exaple.py`.
+
+<details>
+<summary>为什么一定要在终端中运行? </summary>
+<div markdown="1">
+
+因为大部分的 IDE 的终端是终端模拟器而非完整的终端,
+而 curses 的背后其实是 C 的 curses 库, 需要一个终端环境.
+
+</div>
+</details>
+
+### 假设大家已经差不多了解了 curses 这个库了 (大概)
+那么请参考代码: [iceberg.py](./src/computer-battle-game/iceberg.py).
+
+<details>
+<summary>代码都写完了, 那么接下来做什么? </summary>
+<div markdown="1">
+
+其实代码写完了并不意味着这个程序就没有继续升级的地方了.
+我们可以添加许多有意思的功能, 或者对代码进行重构和优化,
+以提升可读性或是性能.
+
+在这里我们将会以 Iceberg 的代码为例进行一定的优化和一般化.
+假如还有时间的话, 我们可以介绍一下该如何用 OOP 的方式,
+来重新构造这个小游戏的代码.
+
+</div>
+</details>
