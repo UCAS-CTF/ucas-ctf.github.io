@@ -12,9 +12,9 @@ Author: [doyo](https://github.com/doyo2024)
 
 ## 队列的实现
 
-下面基于[上上份讲义](https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_s1)中的单向链表给出栈的一种实现。正如前文所述，队列实际上也是一种特殊的线性表，所以只需要对单向列表的实现略作修改，使其插入仅在其一端、删除在另一端进行即可。
+下面基于[上上份讲义](https://ucas-ctf.github.io/posts/ds_s1)中的单向链表给出栈的一种实现。正如前文所述，队列实际上也是一种特殊的线性表，所以只需要对单向列表的实现略作修改，使其插入仅在其一端、删除在另一端进行即可。
 
-&emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/2024/2_advanced_C/code/ds_s3/queue.c" download="queue.c">此处（点击下载）</a>。
+&emsp;&emsp;完整代码详见<a href="https://ucas-ctf.github.io/posts/code/ds_s3/queue.c" download="queue.c">此处（点击下载）</a>。
 
 ### 队列的必要元素
 
@@ -62,7 +62,7 @@ void Push(ElemType data) {
     struct node * ptr = NewSpace;
     ptr->data = data;
     ptr->next = NULL;
-    if (QueueTail == NULL) {
+    if (QueueHead == NULL) {
     	QueueHead = QueueTail = ptr;    // 注意如果队列本来是空的，要把队头也指向新元素
 	} else {
 		QueueTail->next = ptr;          // 由于是从队尾入队，所以注意指针的指向
@@ -93,4 +93,4 @@ ElemType Pop() {
 
 ## 扩展：用数组实现队列
 
-不仅仅是栈可以用数组实现，队列也是可以的。请参考[这篇讲义](https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_ex2)。
+不仅仅是栈可以用数组实现，队列也是可以的。请参考[这篇讲义](https://ucas-ctf.github.io/posts/ds_ex2)。
