@@ -17,6 +17,7 @@ void Init();
 ElemType Front();
 ElemType Pop();
 void Push(ElemType data);
+void Print(); 
 
 int main()
 {
@@ -38,6 +39,10 @@ int main()
         } else if (!strcmp(inst, "push")) {
             scanf("%d", &data);
             Push(data);
+        } else if (!strcmp(inst, "print")) {
+            Print();
+        } else if (!strcmp(inst, "exit")) {
+            break;
         } else {
             printf("Error: Undefined Instruction.\n");
         }
@@ -83,10 +88,21 @@ void Push(ElemType data) {
     struct node * ptr = NewSpace;
     ptr->data = data;
     ptr->next = NULL;
-    if (QueueTail == NULL) {
+    if (QueueHead == NULL) {
     	QueueHead = QueueTail = ptr;    // 注意如果队列本来是空的，要把队头也指向新元素
 	} else {
 		QueueTail->next = ptr;          // 由于是从队尾入队，所以注意指针的指向
 		QueueTail = ptr;                    
 	}
+}
+
+void Print() {
+    struct node *now = QueueHead;
+    int cnt = 0;
+    while (now != NULL) {
+        cnt++;
+        printf("%d ", now->data);
+        now = now->next;
+    }
+    printf("\nThere are %d elements in the list.\n", cnt);
 }
