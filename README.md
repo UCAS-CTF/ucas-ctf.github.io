@@ -153,3 +153,16 @@
 
 </div>
 </details>
+
+### 其它资料
+
+<details>
+<summary>点击展开</summary>
+<div markdown="1">
+
+#### MISC
+
+[古典密码合集](https://ucas-ctf.github.io/posts/2024/MISC/classical_cypher)
+
+</div>
+</details>
