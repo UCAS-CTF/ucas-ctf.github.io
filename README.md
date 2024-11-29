@@ -154,7 +154,7 @@
 </div>
 </details>
 
-#### 其它资料
+### 其它资料
 
 <details>
 <summary>点击展开</summary>
@@ -162,7 +162,7 @@
 
 #### MISC
 
-[古典密码合集](posts/2024/MISC/classical_cypher)
+[古典密码合集](https://ucas-ctf.github.io/posts/2024/MISC/classical_cypher)
 
 </div>
 </details>
