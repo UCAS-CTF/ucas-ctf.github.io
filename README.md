@@ -6,8 +6,7 @@
 >
 > 目前仅更新了部分题目，测评系统和更多习题敬请期待！
 
-> **UCATFLAGS-2024**
-> [**UCATFLAGS-2024 赛前小贴士**](https://ucas-ctf.github.io/UCATFLAGS/)
+> [**UCATFLAGS-2024 赛后题解**](https://ucas-ctf.github.io/UCATFLAGS-WP/)
 
 ### 第零次课————虚拟机的安装
 
