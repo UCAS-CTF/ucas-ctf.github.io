@@ -163,5 +163,9 @@
 
 [古典密码合集](https://ucas-ctf.github.io/posts/2024/MISC/classical_cypher)
 
+#### Pwn
+
+[关于pwn.college](https://ucas-ctf.github.io/posts/2025/Pwn/pwncollege)
+
 </div>
 </details>
