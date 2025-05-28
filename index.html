@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCAS本科CTF平台 - Markdown展示</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap">
+    <!-- 引入highlight.js用于代码高亮 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- 欢迎界面 -->
+    <div id="welcome-screen">
+        <div class="welcome-content">
+            <div class="train-container">
+                <div class="train-text"></div>
+            </div>
+            <h1 class="welcome-title">UCAS本科CTF平台</h1>
+            <button class="enter-btn">进入平台 <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Markdown预览模态框 -->
+    <div id="markdown-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="markdown-back-btn" class="nav-btn" disabled><i class="fas fa-arrow-left"></i></button>
+                <button id="markdown-forward-btn" class="nav-btn" disabled><i class="fas fa-arrow-right"></i></button>
+                <!-- <h2 class="modal-title">文档预览</h2> -->
+                <button class="close-btn">&times;</button>
+            </div>
+            <div id="markdown-content" class="markdown-body">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="./img/logo/littlelogo.jpg" alt="CTF Logo">
+                    <h1>UCAS本科CTF平台</h1>
+                </div>
+                
+                <!-- 汉堡菜单按钮 -->
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-links">
+                        <li><a href="#" class="active nav-link" data-page="home"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="#" class="nav-link" data-page="courses"><i class="fas fa-book"></i> 课程资源</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主页面内容 -->
+    <div id="home-page" class="page-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Welcome To UCAS 本科 CTF 平台</h1>
+            </div>
+            <!-- CTF 赛事介绍 -->
+            <section class="event-intro">
+                <div class="event-content">
+                    <div class="event-text">
+                        <h2>CTF 赛事是什么？</h2>
+                        <p>CTF（Capture The Flag）即夺旗赛，是一种网络安全领域的竞赛形式，参赛者通过解决网络安全问题（如漏洞挖掘、漏洞利用、密码破解等）获取旗子（flag）来得分。</p>
+                        <p>CTF 竞赛分为不同类别，如 Jeopardy（解题模式）、Attack-Defense（攻防模式）和混合模式。通过参加 CTF 竞赛，你可以快速提升自己的网络安全技术能力，结识志同道合的朋友，并有机会获得实习、就业和研究机会。</p>
+                        <p>我们的平台旨在为初学者到高级参赛者提供全面的 CTF 学习资源和实践环境，帮助你从零开始成长为 CTF 高手。</p>
+                    </div>
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="CTF 比赛现场">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 轮播图区域 -->
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="CTF 竞赛">
+                        <div class="carousel-caption">
+                            <h3>探索 CTF 竞赛的魅力</h3>
+                            <p>带你从零开始学习网络空间安全</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="实战教学">
+                        <div class="carousel-caption">
+                            <h3>实战导向的培训模式</h3>
+                            <p>理论与实践相结合，快速提升你的 CTF 技能</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="专家指导">
+                        <div class="carousel-caption">
+                            <h3>学长学姐全程指导</h3>
+                            <p>从基础到进阶，跨学期的培训课程</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 课程资源页面 -->
+    <div id="courses-page" class="course-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">UCAS CTF 课程资源</h1>
+                <p class="page-subtitle">从基础编程到高级安全技术，系统化学习CTF竞赛所需的各种技能</p>
+            </div>
+            
+            <div class="platform-links">
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="platform-title">编程练习平台</h3>
+                    <p class="platform-desc">通过实战题目巩固编程基础，提升解题能力</p>
+                    <a href="https://ucas-ctf.github.io/Coding/" class="platform-btn">
+                        <i class="fas fa-external-link-alt"></i> 访问平台
+                    </a>
+                </div>
+                
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="platform-title">UCATFLAGS-2024题解</h3>
+                    <p class="platform-desc">比赛题目详细解析与解题思路</p>
+                    <a href="https://ucas-ctf.github.io/UCATFLAGS-WP/" class="platform-btn">
+                        <i class="fas fa-book-open"></i> 查看题解
+                    </a>
+                </div>
+            </div>
+
+            <div class="year-filters">
+                <button class="semester-btn active" data-year="all">全部课程</button>
+                <button class="semester-btn" data-year="2024">2024秋季学期</button>
+                <button class="semester-btn" data-year="2025">2025春季学期</button>
+                <button class="semester-btn" data-year="others">其他资料</button>
+            </div>
+            
+            
+            <div class="courses-container">
+                <!-- 第零次课 -->
+                <div class="course-card-expanded" data-year="2024">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-desktop"></i> 第零次课：虚拟机的安装</h2>
+                        <p class="course-subtitle">搭建CTF学习环境</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/env.md" class="resource-link">环境搭建讲义</a>
+                                <p class="resource-desc">详细的环境搭建指南</p>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/setup-env-on-macOS.md" class="resource-link">环境搭建——Mac</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/env_2.md" class="resource-link">如何安装单系统/多系统Linux</a>
+                                <p class="resource-desc">(刚开始写还没写完)</p>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/how-to-use-shell.md" class="resource-link">如何使用SHELL</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/0_VirtualMachine/qa_1.md" class="resource-link">答疑——虚拟机及C语言环境配置相关问题的解答</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 第一次课 -->
+                <div class="course-card-expanded" data-year="2024">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-code"></i> 第一次课：C语言基础</h2>
+                        <p class="course-subtitle">基本语法与数据类型</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/1_basic_C/c_s0.md" class="resource-link">C基础——编写、编译</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/1_basic_C/c_s1.md" class="resource-link">C基础——数据类型</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/1_basic_C/c_s1_notes.md" class="resource-link">课堂笔记</a>
+                                <p class="resource-desc">2024.09.19 C基础第一次课笔记</p>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/1_basic_C/ca.md" class="resource-link">计算机基本组成与结构</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/1_basic_C/make.md" class="resource-link">Makefile与Cmake</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 第二次课 -->
+                <div class="course-card-expanded" data-year="2024">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-sync-alt"></i> 第二次课：C语言进阶</h2>
+                        <p class="course-subtitle">循环、函数、数组与递归</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/1_basic_C/c_s2.md" class="resource-link">C语言进阶讲义</a>
+                                <p class="resource-desc">循环结构、函数、数组、递归</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 第三次课 -->
+                <div class="course-card-expanded" data-year="2024">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-memory"></i> 第三次课：C语言高级</h2>
+                        <p class="course-subtitle">指针、内存管理与调试</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/1_basic_C/c_s3.md" class="resource-link">C语言高级讲义</a>
+                                <p class="resource-desc">指针、内存管理、gdb调试</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 第四次课 -->
+                <div class="course-card-expanded" data-year="2024">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-layer-group"></i> 第四次课：数据结构(1)</h2>
+                        <p class="course-subtitle">线性表、链表、栈与队列</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_s1.md" class="resource-link">线性表与单向链表</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_s2.md" class="resource-link">栈的实现</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_s3.md" class="resource-link">队列的实现</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_ex1.md" class="resource-link">双向链表</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_ex2.md" class="resource-link">用数组实现栈和队列</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_ex3.md" class="resource-link">计算机中的程序运行时栈</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 第五次课 -->
+                <div class="course-card-expanded" data-year="2024">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-tree"></i> 第五次课：数据结构(2)</h2>
+                        <p class="course-subtitle">树结构</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/2_advanced_C/ds_s4.md" class="resource-link">树结构讲义</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 第六次课 -->
+                <div class="course-card-expanded" data-year="2024">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-font"></i> 第六次课：C风格字符串</h2>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/2_advanced_C/string.md" class="resource-link">C风格字符串讲义</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 第七次课 -->
+                <div class="course-card-expanded" data-year="2024">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fab fa-python"></i> 第七次课：Python入门</h2>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/3_basic_Python/trivial-python-introduction.md" class="resource-link">Python基础入门</a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/3_basic_Python/learn-some-python-with-retro-computer-battle-games.md" class="resource-link">通过游戏学习Python</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="course-card-expanded" data-year="others">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-shield-alt"></i> 古典密码合集</h2>
+                        <p class="course-subtitle">古典密码补充资料</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2024/MISC/classical_cypher.md" class="resource-link">古典密码合集</a>
+                                <p class="resource-desc">古典密码补充资料</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="course-card-expanded" data-year="others">
+                    <div class="course-header">
+                        <h2 class="course-title"><i class="fas fa-lock"></i> 关于pwn.college</h2>
+                        <p class="course-subtitle">Pwn补充资料</p>
+                    </div>
+                    <div class="course-content">
+                        <ul class="resources-list">
+                            <li class="resource-item">
+                                <a href="#" data-md-url="https://ucas-ctf.github.io/posts/2025/Pwn/pwncollege.md" class="resource-link">关于pwn.college</a>
+                                <p class="resource-desc">Pwn补充资料</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; UCAS本科CTF竞赛小组版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Linux小火车动画
+        const Smoke = [
+    "                      (@@) (  ) (@)  ( )  @@    ()    @     O     @     O      @<br>\
+                     (   )<br>\
+          (    )<br><br>\
+        (@@@)",
+    "                      (  ) (@@) ( )  (@)  ()    @@    O     @     O     @      O<br>\
+                 (@@@)<br>\
+          (@@@@)<br><br>\
+        (   )"
+];
+
+        const CarBody = 
+        "       ++      +------ ____                 ____________________ ____________________<br>\
+       ||      |+-+ |  |   \@@@@@@@@@@@      |  ___ ___ ___ ___ | |  ___ ___ ___ ___ |<br>\
+     /---------|| | |  |    \@@@@@@@@@@@@@_  |  |<u>U</u>| |<u>C</u>| |<u>A</u>| |<u>S</u>| | |  |<u>C</u>| |<u>T</u>| |<u>F</u>| |<u>!</u>| |<br>\
+    + ========  +-+ |  |                  | |__________________| |__________________|"
+        const CarWheels = [
+"   _|--O========O~\\-+  |__________________| |__________________| |__________________|<br>\
+//// \\_/      \\_/      (O)       (O)        (O)        (O)       (O)        (O)",
+"   _|--/O========O\\-+  |__________________| |__________________| |__________________|<br>\
+//// \\_/      \\_/       (O)       (O)        (O)        (O)       (O)        (O)",
+"   _|--/~O========O-+  |__________________| |__________________| |__________________|<br>\
+//// \\_/      \\_/        (O)       (O)        (O)        (O)       (O)        (O)",
+"   _|--/~\\------/~\\-+  |__________________| |__________________| |__________________|<br>\
+//// \\_O========O        (O)       (O)        (O)        (O)       (O)        (O)",
+"   _|--/~\\------/~\\-+  |__________________| |__________________| |__________________|<br>\
+//// \\O========O/       (O)       (O)        (O)        (O)       (O)        (O)",
+"   _|--/~\\------/~\\-+  |__________________| |__________________| |__________________|<br>\
+//// O========O_/      (O)       (O)        (O)        (O)       (O)        (O)",
+];
+        const UCAS_CTF = "<br><br>\
+██╗   ██╗ ██████╗ █████╗ ███████╗     ██████╗████████╗███████╗███████╗██████╗ <br>\
+██║   ██║██╔════╝██╔══██╗██╔════╝    ██╔════╝╚══██╔══╝██╔════╝██╔════╝██╔══██╗<br>\
+██║   ██║██║     ███████║███████╗    ██║        ██║   █████╗  █████╗  ██████╔╝<br>\
+██║   ██║██║     ██╔══██║╚════██║    ██║        ██║   ██╔══╝  ██╔══╝  ██╔══██╗<br>\
+╚██████╔╝╚██████╗██║  ██║███████║    ╚██████╗   ██║   ██║     ███████╗██║  ██║<br>\
+ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝     ╚═════╝   ╚═╝   ╚═╝     ╚══════╝╚═╝  ╚═╝"
+        function sl_draw(state) {
+                return Smoke[state % 2].replace(/ /g, "&ensp;") + "<br>" + CarBody.replace(/ /g, "&ensp;") + "<br>" + CarWheels[state % 6].replace(/ /g, "&ensp;")// + UCAS_CTF.replace(/ /g, "═");
+        }
+
+        // 页面加载时执行
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('welcome-screen');
+            const enterBtn = document.querySelector('.enter-btn');
+            const skipBtn = document.querySelector('.enter-btn');
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            const txt = document.querySelector('.train-text');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const prevBtn = document.querySelector('.carousel-control.prev');
+            const nextBtn = document.querySelector('.carousel-control.next');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const homePage = document.getElementById('home-page');
+            const coursesPage = document.getElementById('courses-page');
+            const modal = document.getElementById('markdown-modal');
+            const closeBtn = document.querySelector('.close-btn');
+            const markdownContent = document.getElementById('markdown-content');
+            const resourceLinks = document.querySelectorAll('.resource-link[data-md-url]');
+            const platformBtn = document.querySelectorAll('.platform-btn[data-md-url]');
+            
+            // 初始化页面
+            coursesPage.style.display = 'none';
+            homePage.style.display = 'block';
+
+            // 在脚本顶部添加历史记录相关变量
+            let markdownHistory = [];
+            let currentHistoryIndex = -1;
+
+            // 更新导航按钮状态
+            function updateNavButtons() {
+                document.getElementById('markdown-back-btn').disabled = currentHistoryIndex <= 0;
+                document.getElementById('markdown-forward-btn').disabled = currentHistoryIndex >= markdownHistory.length - 1;
+            }
+            
+            // 欢迎界面动画
+            let trainInterval;
+            function initWelcomeScreen() {
+                let state = 0;
+                function updateTrain() {
+                    state = (state + 1) % 12;
+                    txt.innerHTML = sl_draw(state);
+                }
+                
+                // 每200毫秒更新一次小火车
+                trainInterval = setInterval(updateTrain, 200);
+            }
+            
+            initWelcomeScreen();
+            
+            // 隐藏欢迎界面，显示主内容
+            function hideSplash() {
+                clearInterval(trainInterval);
+                splashScreen.style.opacity = '0';
+                splashScreen.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 1000);
+            }
+            
+            // 跳过按钮
+            skipBtn.addEventListener('click', hideSplash);
+            
+            // 进入按钮
+            enterBtn.addEventListener('click', hideSplash);
+            
+            // 导航菜单点击事件
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // 更新导航栏激活状态
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 显示对应页面
+                    if (targetPage === 'home') {
+                        homePage.style.display = 'block';
+                        coursesPage.style.display = 'none';
+                    } else if (targetPage === 'courses') {
+                        homePage.style.display = 'none';
+                        coursesPage.style.display = 'block';
+                    }
+                    
+                    // 移动端关闭菜单
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+            
+            // 汉堡菜单点击事件
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                // 切换汉堡菜单图标
+                if (navMenu.classList.contains('active')) {
+                    hamburger.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            
+            // 轮播图功能
+            let currentSlide = 0;
+            const totalSlides = carouselItems.length;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselItems[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                let next = currentSlide + 1;
+                if (next >= totalSlides) next = 0;
+                showSlide(next);
+            }
+            
+            function prevSlide() {
+                let prev = currentSlide - 1;
+                if (prev < 0) prev = totalSlides - 1;
+                showSlide(prev);
+            }
+            
+            // 绑定按钮事件
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // 自动轮播
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // 鼠标悬停时暂停轮播
+            const carousel = document.querySelector('.carousel');
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            carousel.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+            
+            // 初始化轮播图
+            showSlide(0);
+
+            // 窗口大小变化时关闭移动菜单
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            
+            // 年份筛选功能
+            const yearBtns = document.querySelectorAll('.semester-btn');
+            const courseCards = document.querySelectorAll('.course-card-expanded');
+            
+            yearBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 更新按钮状态
+                    yearBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const year = this.getAttribute('data-year');
+                    
+                    // 筛选课程
+                    courseCards.forEach(card => {
+                        if (year === 'all' || card.getAttribute('data-year') === year) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // 学期选择器功能
+            const semesterBtns = document.querySelectorAll('.semester-btn');
+            semesterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    semesterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // 展开/收起功能
+            const expandBtns = document.querySelectorAll('.expand-btn');
+            expandBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const card = this.closest('.course-card-expanded');
+                    
+                    if (card.classList.contains('expanded')) {
+                        card.classList.remove('expanded');
+                        this.innerHTML = '查看更多资料 <i class="fas fa-chevron-down"></i>';
+                    } else {
+                        card.classList.add('expanded');
+                        this.innerHTML = '收起 <i class="fas fa-chevron-up"></i>';
+                    }
+                });
+            });
+            
+            // Markdown预览功能
+            function renderMarkdown(content) {
+                // 使用marked解析Markdown
+                const html = marked.parse(content);
+                // console.log(html);
+                markdownContent.innerHTML = html;
+
+                // 高亮所有代码块
+                markdownContent.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightElement(block);
+                });
+
+                // 调整图片大小
+                markdownContent.querySelectorAll('img').forEach(img => {
+                    img.style.maxWidth = '100%';
+                    img.style.height = 'auto';
+                });
+
+                // 数学公式渲染
+                renderMathInElement(markdownContent, {
+                    delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                    ],
+                    macros: {
+                    "\\ge": "\\geqslant",
+                    "\\le": "\\leqslant",
+                    "\\geq": "\\geqslant",
+                    "\\leq": "\\leqslant"
+                    }
+                });
+
+                // 在当前模态框中加载该链接，并将上一链接入栈
+                const links = markdownContent.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const mdUrl = this.getAttribute('href');
+                        
+                        // 显示加载状态
+                        postInnerHTML = markdownContent.innerHTML;
+                        markdownContent.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading...</div>';
+                        
+                        // 获取Markdown内容
+                        fetch(mdUrl+'.md')
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('文件加载失败');
+                                }
+                                return response.text();
+                            })
+                            .then(text => {
+                                renderMarkdown(text);
+                                // 如果是从历史记录中间位置加载新内容，清除后面的历史
+                                if (currentHistoryIndex < markdownHistory.length - 1) {
+                                    markdownHistory = markdownHistory.slice(0, currentHistoryIndex + 1);
+                                }
+                                markdownHistory.push(mdUrl+'.md');
+                                currentHistoryIndex = markdownHistory.length - 1;
+                                updateNavButtons();
+                                console.log(markdownHistory);
+                            })
+                            .catch(error => {
+                                // 新开页面，跳转到该链接
+                                window.open(mdUrl, '_blank');
+                                markdownContent.innerHTML = postInnerHTML;
+                            });
+                    });
+                });
+
+                // 滚动到顶部
+                markdownContent.scrollTop = 0;
+            }
+
+            // 资源链接点击事件
+            resourceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+
+                    e.preventDefault();
+                    const mdUrl = this.getAttribute('data-md-url');
+                    console.log(mdUrl);
+                    
+                    // 显示加载状态
+                    markdownContent.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> 正在加载文档内容...</div>';
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    
+                    // 获取Markdown内容
+                    fetch(mdUrl)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('文件加载失败');
+                            }
+                            return response.text();
+                        })
+                        .then(text => {
+                            // 如果是从历史记录中间位置加载新内容，清除后面的历史
+                            if (currentHistoryIndex < markdownHistory.length - 1) {
+                                markdownHistory = markdownHistory.slice(0, currentHistoryIndex + 1);
+                            }
+                            markdownHistory.push(mdUrl);
+                            currentHistoryIndex++;
+                            updateNavButtons();
+                            console.log(markdownHistory);
+                            renderMarkdown(text);
+                        })
+                        .catch(error => {
+                            markdownContent.innerHTML = `<div class="loading"><i class="fas fa-exclamation-triangle"></i> ${error.message}</div>`;
+                        });
+                });
+            });
+
+            platformBtn.forEach(link => {
+                link.addEventListener('click', function(e) {
+
+                    e.preventDefault();
+                    const mdUrl = this.getAttribute('data-md-url');
+                    
+                    // 显示加载状态
+                    markdownContent.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> 正在加载文档内容...</div>';
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    
+                    // 获取Markdown内容
+                    fetch(mdUrl)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('文件加载失败');
+                            }
+                            return response.text();
+                        })
+                        .then(text => {
+                            // 如果是从历史记录中间位置加载新内容，清除后面的历史
+                            if (currentHistoryIndex < markdownHistory.length - 1) {
+                                markdownHistory = markdownHistory.slice(0, currentHistoryIndex + 1);
+                            }
+                            markdownHistory.push(mdUrl);
+                            currentHistoryIndex++;
+                            updateNavButtons();
+                            console.log(markdownHistory);
+                            renderMarkdown(text);
+                        })
+                        .catch(error => {
+                            markdownContent.innerHTML = `<div class="loading"><i class="fas fa-exclamation-triangle"></i> ${error.message}</div>`;
+                        });
+                });
+            });
+            
+            // 关闭模态框
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // 点击模态框外部关闭
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            const backBtn = document.getElementById('markdown-back-btn');
+            const forwardBtn = document.getElementById('markdown-forward-btn');
+
+            // 后退按钮点击事件
+            backBtn.addEventListener('click', function() {
+                if (currentHistoryIndex > 0) {
+                    currentHistoryIndex--;
+                    updateNavButtons();
+
+                    // 显示加载状态
+                    markdownContent.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> 正在加载文档内容...</div>';
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    
+                    // 获取Markdown内容
+                    fetch(markdownHistory[currentHistoryIndex])
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('文件加载失败');
+                            }
+                            return response.text();
+                        })
+                        .then(text => {
+                            console.log(markdownHistory);
+                            renderMarkdown(text);
+                        })
+                        .catch(error => {
+                            markdownContent.innerHTML = `<div class="loading"><i class="fas fa-exclamation-triangle"></i> ${error.message}</div>`;
+                        });
+                }
+            });
+            
+            // 前进按钮点击事件
+            forwardBtn.addEventListener('click', function() {
+                if (currentHistoryIndex < markdownHistory.length - 1) {
+                    currentHistoryIndex++;
+                    updateNavButtons();
+
+                    // 显示加载状态
+                    markdownContent.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> 正在加载文档内容...</div>';
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    
+                    // 获取Markdown内容
+                    fetch(markdownHistory[currentHistoryIndex])
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('文件加载失败');
+                            }
+                            return response.text();
+                        })
+                        .then(text => {
+                            console.log(markdownHistory);
+                            renderMarkdown(text);
+                        })
+                        .catch(error => {
+                            markdownContent.innerHTML = `<div class="loading"><i class="fas fa-exclamation-triangle"></i> ${error.message}</div>`;
+                        });
+                }
+            });
+            
+            // 配置marked解析器
+            marked.setOptions({
+                gfm: true,
+                breaks: true,
+                smartLists: true,
+                smartypants: true
+            });
+        });
+    </script>
+</body>
+</html>
