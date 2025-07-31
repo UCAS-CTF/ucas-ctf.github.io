@@ -1,4 +1,4 @@
-        /* 全局样式 - 简约清新风格 */
+
         :root {
             --primary: #4da6ff;
             --primary-light: #e6f2ff;
@@ -11,12 +11,17 @@
             --border: #e0e6ed;
             --shadow: rgba(149, 157, 165, 0.1);
         }
+
+        @font-face {
+            font-family: "unifont";
+            src: url("./font/unifont-16.0.04.otf");
+        }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "unifont", 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {

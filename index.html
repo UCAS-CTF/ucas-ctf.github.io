@@ -89,38 +89,6 @@
                     </div> -->
                 </div>
             </section>
-
-            <!-- 轮播图区域 -->
-            <div class="carousel" style="display: none;">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="CTF 竞赛">
-                        <div class="carousel-caption">
-                            <h3>探索 CTF 竞赛的魅力</h3>
-                            <p>带你从零开始学习网络空间安全</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="实战教学">
-                        <div class="carousel-caption">
-                            <h3>实战导向的培训模式</h3>
-                            <p>理论与实践相结合，快速提升你的 CTF 技能</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="专家指导">
-                        <div class="carousel-caption">
-                            <h3>学长学姐全程指导</h3>
-                            <p>从基础到进阶，跨学期的培训课程</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -460,9 +428,6 @@
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
             const txt = document.querySelector('.train-text');
-            const carouselItems = document.querySelectorAll('.carousel-item');
-            const prevBtn = document.querySelector('.carousel-control.prev');
-            const nextBtn = document.querySelector('.carousel-control.next');
             const navLinks = document.querySelectorAll('.nav-link');
             const homePage = document.getElementById('home-page');
             const coursesPage = document.getElementById('courses-page');
@@ -556,48 +521,6 @@
                 }
             });
             
-            // 轮播图功能
-            let currentSlide = 0;
-            const totalSlides = carouselItems.length;
-            
-            function showSlide(index) {
-                carouselItems.forEach(item => item.classList.remove('active'));
-                carouselItems[index].classList.add('active');
-                currentSlide = index;
-            }
-            
-            function nextSlide() {
-                let next = currentSlide + 1;
-                if (next >= totalSlides) next = 0;
-                showSlide(next);
-            }
-            
-            function prevSlide() {
-                let prev = currentSlide - 1;
-                if (prev < 0) prev = totalSlides - 1;
-                showSlide(prev);
-            }
-            
-            // 绑定按钮事件
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-            
-            // 自动轮播
-            let slideInterval = setInterval(nextSlide, 5000);
-            
-            // 鼠标悬停时暂停轮播
-            const carousel = document.querySelector('.carousel');
-            carousel.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-            
-            carousel.addEventListener('mouseleave', () => {
-                slideInterval = setInterval(nextSlide, 5000);
-            });
-            
-            // 初始化轮播图
-            showSlide(0);
-
             // 窗口大小变化时关闭移动菜单
             window.addEventListener('resize', function() {
                 if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
