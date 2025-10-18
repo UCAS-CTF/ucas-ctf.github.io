@@ -63,6 +63,7 @@
                     <ul class="nav-links">
                         <li><a href="#" class="active nav-link" data-page="home"><i class="fas fa-home"></i> Home </a></li>
                         <li><a href="#" class="nav-link" data-page="courses"><i class="fas fa-book"></i> Source </a></li>
+                        <li><a href="#" class="nav-link" data-page="activities"><i class="fas fa-calendar-alt"></i> Activities </a></li>
                     </ul>
                 </div>
             </nav>
@@ -103,6 +104,17 @@
             <div class="platform-links">
                 <div class="platform-card">
                     <div class="platform-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3 class="platform-title">CTF入门指南</h3>
+                    <p class="platform-desc">方向介绍与工具指南</p>
+                    <a href="https://ucas-ctf.github.io/ctf_guidebook/" class="platform-btn" id="guidebook-btn">
+                        <i class="fas fas fa-book-open"></i> 阅读指南
+                    </a>
+                </div>
+                
+                <div class="platform-card">
+                    <div class="platform-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3 class="platform-title">编程基础练习平台</h3>
@@ -112,7 +124,7 @@
                     </a>
                 </div>
                 
-                <div class="platform-card">
+<!--                 <div class="platform-card">
                     <div class="platform-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
@@ -121,7 +133,7 @@
                     <a href="https://ucas-ctf.github.io/UCATFLAGS-WP/" class="platform-btn">
                         <i class="fas fa-book-open"></i> 查看题解
                     </a>
-                </div>
+                </div> -->
 
                 <div class="platform-card">
                     <div class="platform-icon">
@@ -369,6 +381,44 @@
         </div>
     </div>
 
+    <!-- 赛事活动页面-->
+    <div id="activities-page" class="activities-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">赛事与活动时间轴</h1>
+                <p class="page-subtitle">回顾历年重要赛事与活动</p>
+            </div>
+
+            <div class="timeline" id="timeline">
+
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-date">2025-12</div>
+                    <h3>UCATFLAGS‑2025</h3>
+                    <p>第二届UCAS本科生CTF比赛<span class="tag">比赛</span></p>
+                    <p style="margin-top:8px;">Coming Soon</p>
+                </div>
+
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-date">2024-11-30</div>
+                    <h3>UCATFLAGS‑2024</h3>
+                    <p>第一届UCAS本科生CTF比赛，包含PPC、MISC、PWN、逆向、Web、密码六个方向。<span class="tag">比赛</span></p>
+                    <p style="margin-top:8px;"><a href="https://ucas-ctf.github.io/UCATFLAGS-WP/" target="_blank">赛后总结与题解</a></p>
+                </div>
+
+
+
+            </div>
+
+            <div class="timeline-controls">
+                <button class="semester-btn active" data-filter="all">全部</button>
+                <button class="semester-btn" data-filter="2025">2025</button>
+                <button class="semester-btn" data-filter="2024">2024</button>
+            </div>
+        </div>
+    </div>
+
+
+
     <footer>
         <div class="container">
             <div class="footer-bottom">
@@ -431,6 +481,7 @@
             const navLinks = document.querySelectorAll('.nav-link');
             const homePage = document.getElementById('home-page');
             const coursesPage = document.getElementById('courses-page');
+            const activitiesPage = document.getElementById('activities-page');
             const modal = document.getElementById('markdown-modal');
             const closeBtn = document.querySelector('.close-btn');
             const markdownContent = document.getElementById('markdown-content');
@@ -440,6 +491,7 @@
             // 初始化页面
             coursesPage.style.display = 'none';
             homePage.style.display = 'block';
+            activitiesPage.style.display = 'none';
 
             // 在脚本顶部添加历史记录相关变量
             let markdownHistory = [];
@@ -497,9 +549,15 @@
                     if (targetPage === 'home') {
                         homePage.style.display = 'block';
                         coursesPage.style.display = 'none';
+                        activitiesPage.style.display = 'none';
                     } else if (targetPage === 'courses') {
                         homePage.style.display = 'none';
                         coursesPage.style.display = 'block';
+                        activitiesPage.style.display = 'none';
+                    } else if (targetPage === 'activities') {
+                        homePage.style.display = 'none';
+                        coursesPage.style.display = 'none';
+                        activitiesPage.style.display = 'block';
                     }
                     
                     // 移动端关闭菜单
@@ -799,6 +857,32 @@
                         });
                 }
             });
+
+
+           // 时间轴筛选功能（Activities 页面）
+           // 只作用于 .timeline-controls 下的按钮，避免和课程页的按钮冲突
+           const timelineBtns = document.querySelectorAll('.timeline-controls .semester-btn');
+           const timelineItems = document.querySelectorAll('.timeline .timeline-item');
+
+           if (timelineBtns.length && timelineItems.length) {
+               timelineBtns.forEach(btn => {
+                   btn.addEventListener('click', function() {
+                       // 按钮高亮（仅在时间轴控件内切换）
+                       timelineBtns.forEach(b => b.classList.remove('active'));
+                       this.classList.add('active');
+
+                       const filter = this.getAttribute('data-filter');
+                       timelineItems.forEach(item => {
+                           if (filter === 'all' || item.getAttribute('data-year') === filter) {
+                               item.style.display = 'block';
+                           } else {
+                               item.style.display = 'none';
+                           }
+                       });
+                   });
+               });
+            }
+            
             
             // 配置marked解析器
             marked.setOptions({
