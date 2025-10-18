@@ -753,6 +753,71 @@
             color: var(--primary);
         }
 
+        /* Activities 时间轴样式 */
+       .activities-page .page-header { margin-bottom: 24px; }
+       .timeline {
+           position: relative;
+           padding: 20px 0;
+           margin-left: 20px;
+       }
+       .timeline::before {
+           content: '';
+           position: absolute;
+           left: 40px;
+           top: 0;
+           bottom: 0;
+           width: 3px;
+           background: linear-gradient(#4b6cb7, #182848);
+           border-radius: 2px;
+       }
+       .timeline-item {
+           position: relative;
+           margin: 20px 0 20px 80px;
+           padding: 12px 16px;
+           background: rgba(255,255,255,0.03);
+           border-radius: 8px;
+           box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+           border: 1px solid rgba(255,255,255,0.03);
+       }
+       .timeline-item .timeline-date {
+           position: absolute;
+           left: -120px;
+           top: 12px;
+           width: 100px;
+           text-align: right;
+           color: #888;
+           font-size: 0.9rem;
+       }
+       .timeline-item::before {
+           content: '';
+           position: absolute;
+           left: -48px;
+           top: 18px;
+           width: 14px;
+           height: 14px;
+           background: linear-gradient(45deg,#ffd166,#ef476f);
+           border-radius: 50%;
+           box-shadow: 0 0 0 4px rgba(239,71,111,0.06);
+       }
+       .timeline-item h3 { margin: 0 0 6px 0; font-size: 1.05rem; }
+       .timeline-item p { margin: 0; color: #cfcfcf; line-height: 1.5; }
+       .timeline-controls {
+           margin-top: 12px;
+           display: flex;
+           gap: 8px;
+           flex-wrap: wrap;
+       }
+       .timeline .tag { display:inline-block; margin-top:8px; padding:4px 8px; background:#2b2b2b; color:#fff; border-radius:14px; font-size:0.8rem; }
+
+       @media (max-width:768px) {
+           .timeline::before { left: 20px; }
+           .timeline-item { margin-left: 60px; }
+           .timeline-item .timeline-date { left: -100px; font-size:0.8rem; }
+       }
+
+
+       
+
         /* 响应式设计 */
         @media (max-width: 992px) {
             .event-content {
