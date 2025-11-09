@@ -13,9 +13,7 @@
 - **库与库函数调用**	*Libraries & Library Functions*
 
 **PPT**
-<!-- path = posts\2025\1_Basic_Python_2025\1_2_Advanced_Python\CTF Class 2 - Python_2.pdf -->
-<!-- <object data="./1_1_Python_Syntax/CTF%20Class%201%20-%20Python_1.pdf" type="application/pdf" width="100%" height="800px">
-    <p>抱歉，你的浏览器不支持预览PDF文件。<a href="./1_2_Advanced_Python/CTF%20Class%202%20-%20Python_2.pdf">请点击这里下载</a>。</p>
-</object> -->
 
-<iframe src="https://docs.google.com/gview?url=./1_2_Advanced_Python/CTF%20Class%202%20-%20Python_2.pdf&embedded=true" style="width:100%; height:800px;" frameborder="0"></iframe>
+<object data="https://github.com/UCAS-CTF/ucas-ctf.github.io/blob/main/posts/2025/1_Basic_Python_2025/1_1_Python_Syntax/CTF%20Class%201%20-%20Python_1.pdf" type="application/pdf" width="100%" height="600px">
+Click <a href="https://github.com/UCAS-CTF/ucas-ctf.github.io/blob/main/posts/2025/1_Basic_Python_2025/1_1_Python_Syntax/CTF%20Class%201%20-%20Python_1.pdf" target="_blank">HERE</a> to get the PDF version of PPT.
+</object>
