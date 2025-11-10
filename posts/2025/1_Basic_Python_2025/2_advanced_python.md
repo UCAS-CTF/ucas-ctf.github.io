@@ -13,7 +13,7 @@
 - **其他**		        Miscellaneous
 
 **PPT**
-<iframe src="https://ucas-ctf.github.io/posts/2025/1_Basic_Python_2025/1_1_Python_Syntax/CTF%20Class%201%20-%20Python_1.pdf" style="width:100%; height:240px;" frameborder="0"></iframe>
+<iframe src="https://ucas-ctf.github.io/posts/2025/1_Basic_Python_2025/1_1_Python_Syntax/CTF%20Class%201%20-%20Python_1.pdf" style="width:100%; height:400px;" frameborder="0"></iframe>
 
 **Code 1: Anonymous Function/Lambda Expression**
 ```python
