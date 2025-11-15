@@ -51,7 +51,7 @@ $$
 
 **保密通信系统模型（Secure Communication System Model）**：
 
-![Secure Communication System Model](./img/SCSM.png)
+![Secure Communication System Model](./posts/2025/3_crypto_2025/crypto_1/img/SCSM.png)
 
 密码一般分为**对称密码**和**非对称密码**两种基本类型。
 

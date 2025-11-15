@@ -478,8 +478,8 @@ assert data == decrypted_data
 
 #### (1) ECB (Electronic Codebook) 电子密码本模式
 
-![ECB_Enc](./img/ECB_Enc.png)
-![ECB_Dec](./img/ECB_Dec.png)
+![ECB_Enc](./posts/2025/3_crypto_2025/crypto_1/img/ECB_Enc.png)
+![ECB_Dec](./posts/2025/3_crypto_2025/crypto_1/img/ECB_Dec.png)
 
 * **原理**：最简单的模式。每个明文块 $P_i$ 独立地加密成密文块 $C_i$。
     * 加密: $C_i = E_k(P_i)$
@@ -490,7 +490,7 @@ assert data == decrypted_data
     * **容错性高**：一个密文块出错，只影响对应的明文块。
 * **缺点**：
     * **极不安全！** 相同的明文块 ($P_i = P_j$) 会产生相同的密文块 ($C_i = C_j$)。这会暴露明文的统计规律和模式，如 **The ECB Penguin**：
-    ![theECBPenguin](./img/theECBPenguin.png)
+    ![theECBPenguin](./posts/2025/3_crypto_2025/crypto_1/img/theECBPenguin.png)
 * **用途**：**严禁用于加密消息。** 仅适用于加密**完全随机**的数据（如加密另一个密钥）。
 
 **Python 实现**：
@@ -521,8 +521,8 @@ assert data == pt
 
 #### (2) CBC (Cipher Block Chaining) 密码块链接模式
 
-![CBC_Enc](./img/CBC_Enc.png)
-![CBC_Dec](./img/CBC_Dec.png)
+![CBC_Enc](./posts/2025/3_crypto_2025/crypto_1/img/CBC_Enc.png)
+![CBC_Dec](./posts/2025/3_crypto_2025/crypto_1/img/CBC_Dec.png)
 
 * **原理**：加密前，当前明文块 $P_i$ 先与**前一个密文块** $C_{i-1}$ 异或。
     * **IV (Initialization Vector)**：对于第一个块，需要一个**随机且唯一**的 $C_{-1}$，称为**初始向量 (IV)**。IV 无需保密，但**必须随机**。
@@ -560,8 +560,8 @@ assert data == pt_cbc
 
 #### (3) CFB (Cipher Feedback) 密码反馈模式
 
-![CFB_Enc](./img/CFB_Enc.png)
-![CFB_Dec](./img/CFB_Dec.png)
+![CFB_Enc](./posts/2025/3_crypto_2025/crypto_1/img/CFB_Enc.png)
+![CFB_Dec](./posts/2025/3_crypto_2025/crypto_1/img/CFB_Dec.png)
 
 * **原理**：将分组密码转换为**自同步流密码**。
     * **IV/Nonce**：需要一个随机的 IV。
@@ -596,8 +596,8 @@ assert data == pt_cfb
 
 #### (4) OFB (Output Feedback) 输出反馈模式
 
-![OFB_Enc](./img/OFB_Enc.png)
-![OFB_Dec](./img/OFB_Dec.png)
+![OFB_Enc](./posts/2025/3_crypto_2025/crypto_1/img/OFB_Enc.png)
+![OFB_Dec](./posts/2025/3_crypto_2025/crypto_1/img/OFB_Dec.png)
 
 * **原理**：将分组密码转换为**同步流密码**（类似CTR）。
     * **IV/Nonce**：需要一个**唯一 (Unique)** 的 IV（也叫 Nonce）。
@@ -631,8 +631,8 @@ assert data == pt_ofb
 
 #### (3) CTR (Counter) 计数器模式
 
-![CTR_Enc](./img/CTR_Enc.png)
-![CTR_Dec](./img/CTR_Dec.png)
+![CTR_Enc](./posts/2025/3_crypto_2025/crypto_1/img/CTR_Enc.png)
+![CTR_Dec](./posts/2025/3_crypto_2025/crypto_1/img/CTR_Dec.png)
 
 * **原理**：将分组密码转换为**同步流密码**，是目前最常用、最高效的模式之一。加密一个由 **Nonce（只用一次的随机数）**和**计数器（Counter, $i$）** 组成的块，将其输出作为密钥流，与明文 $P_i$ 异或。
     * **Nonce**：需要一个**唯一 (Unique)** 的随机数。
