@@ -616,7 +616,6 @@
             color: var(--text-light);
         }
 
-        /* Markdown预览模态框 */
         .modal {
             display: none;
             position: fixed;
